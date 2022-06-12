@@ -19,7 +19,7 @@ function PackagesPage() {
                             <li className="package-item">
                                 <div>interior</div>
                                 <div className="flex  bg-red-500 border rounded-full w-4 h-4">
-                                    <span className="text-sm"> ></span>
+                                    <span className="text-sm">G</span>
                                 </div>
                             </li>
                             <li className="package-item">
@@ -30,7 +30,7 @@ function PackagesPage() {
 
 
                                 <div className="flex  bg-red-500 border rounded-full w-4 h-4">
-                                    <span className="text-sm"> ></span>
+                                    <span className="text-sm">F</span>
                                 </div>
                             </li>
                             <li className="package-item">
@@ -41,7 +41,7 @@ function PackagesPage() {
 
 
                                 <div className="flex  bg-red-500 border rounded-full w-4 h-4">
-                                    <span className="text-sm"> ></span>
+                                    <span className="text-sm">F</span>
                                 </div>
                             </li>
                         </ul>
@@ -60,7 +60,7 @@ Large Car N43,830
 
 </h1>
 
-<p>> <span className="text-xs text-white">5,500 extra Logistics fee to Mainland.</span></p>
+<p>F <span className="text-xs text-white">5,500 extra Logistics fee to Mainland.</span></p>
                         </div>
                     </div>
                     <div className="bg-blue-400">
