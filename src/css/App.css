@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+
+.package-item {
+ @apply bg-gray-200 my-3 rounded-md  px-2 flex justify-between items-center
+
+}
