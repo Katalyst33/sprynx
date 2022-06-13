@@ -12,6 +12,10 @@ interface PackageInfoTypings {
   description: string;
   services: PackageServiceTypings[];
   link: string;
+  duration: string;
+  regularCar: string;
+  largeCar: string;
+  logistics: string;
 }
 
 interface PackageCardTypings {
@@ -23,7 +27,7 @@ export default function PackageCardComponent(props: PackageCardTypings) {
 
   return (
     <>
-      <Debug data={packageInfo} />
+      {/* <Debug data={packageInfo} /> */}
       <div className="bg-blue-400 p-4 rounded-2xl">
         <h1 className="text-white">{packageInfo.title}</h1>
         <p className="text-white">{packageInfo.description}</p>
@@ -39,7 +43,7 @@ export default function PackageCardComponent(props: PackageCardTypings) {
                       <span className="text-sm">V</span>
                     </div>
                   </li>
-                  <div className="text-sm">{service.description}</div>
+                  <div className="text-sm hidden">{service.description}</div>
                 </div>
               )
             )}
@@ -47,13 +51,13 @@ export default function PackageCardComponent(props: PackageCardTypings) {
         </div>
 
         <div>
-          <h1 className="text-white">Duration: 8 to 9 hours</h1>
-          <h1 className="text-white">Regular Car N43,830</h1>{" "}
-          <h1 className="text-white">Large Car N43,830</h1>
+          <h1 className="text-white">Duration: {packageInfo.duration}</h1>
+          <h1 className="text-white">Regular Car {packageInfo.regularCar}</h1>{" "}
+          <h1 className="text-white">Large Car {packageInfo.largeCar}</h1>
           <p>
             F{" "}
             <span className="text-xs text-white">
-              5,500 extra Logistics fee to Mainland.
+              {packageInfo.logistics}
             </span>
           </p>
         </div>

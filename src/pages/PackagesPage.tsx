@@ -2,10 +2,14 @@ import "../css/App.css";
 import Debug from "../components/DebugDataComponent";
 import PackageCardComponent from "../components/PackageCardComponent";
 
-function PackagesPage(map: any) {
+function PackagesPage() {
   const packageData = {
     title: "Golden",
     description: "popular package",
+    regularCar: "N43,830",
+    duration: "8 - 9 hours",
+    largeCar: "N53,830",
+    logistics: "5,500 extra Logistics fee to Mainland.",
     services: [
       {
         title: "exterior",
