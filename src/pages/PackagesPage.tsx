@@ -1,7 +1,8 @@
 import "../css/App.css";
+import Debug from "../components/DebugDataComponent";
 import PackageCardComponent from "../components/PackageCardComponent";
 
-function PackagesPage() {
+function PackagesPage(map: any) {
   const packageData = {
     title: "Golden",
     description: "popular package",
@@ -21,6 +22,7 @@ function PackagesPage() {
     ],
     link: "golden-package",
   };
+
   return (
     <>
       <div className="container mx-auto">
