@@ -1,5 +1,5 @@
 import React from 'react'
-import "./FloatingNav.css";
+import "../css/FloatingNav.css";
 import {AiOutlineHome} from "react-icons/ai"
 import {AiOutlineUser} from "react-icons/ai"
 import {RiCustomerService2Fill} from "react-icons/ri"

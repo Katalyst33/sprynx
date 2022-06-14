@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <HeaderLayout />
-      <FloatingNav />
+      {/* <FloatingNav /> */}
       <PackagesPage />
     </>
   );
