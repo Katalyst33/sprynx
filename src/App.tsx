@@ -3,6 +3,7 @@ import "./css/App.css";
 import HeaderLayout from "./layouts/HeaderLayout";
 import PackagesPage from "./pages/PackagesPage";
 import FloatingNav from "./layouts/FloatingNav";
+import Footer from "./layouts/Footer";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <HeaderLayout />
       {/* <FloatingNav /> */}
       <PackagesPage />
+      <Footer />
     </>
   );
 }
