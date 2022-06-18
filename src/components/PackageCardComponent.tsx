@@ -5,6 +5,7 @@ import { Disclosure } from '@headlessui/react'
 import { BsChevronDown } from 'react-icons/bs'
 import {BsChevronLeft} from "react-icons/bs";
 import {BsChevronRight} from "react-icons/bs";
+import DropDown from "./DropDown";
 
 interface PackageServiceTypings {
   title: string;
@@ -28,10 +29,6 @@ interface PackageCardTypings {
 
 export default function PackageCardComponent(props: PackageCardTypings) {
   const packageInfo = props.packageInfo;
-  const [drop, setDrop] = React.useState(false);
-  function toggleDrop(index: any){
-    setDrop(!drop)
-  }
 
   return (
     <div className="">
@@ -81,13 +78,7 @@ export default function PackageCardComponent(props: PackageCardTypings) {
             {packageInfo.services.map(
               (service: PackageServiceTypings, index: number) => (
                 <div key={index}>
-                  <li className="package-item bg-white" onClick={toggleDrop}>
-                    <div className="px-1 py-1">{service.title}</div>
-                    <div className="flex whole bg-red-500 border rounded-full w-4 h-4">
-                      <span className="text-sm">V</span>
-                    </div>
-                  </li>
-                  {drop && <div className="text-sm">{service.description}</div>}
+                  <DropDown title = {service.title} description={service.description}/>
                 </div>
               )
             )}
