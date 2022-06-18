@@ -2,12 +2,9 @@
   "name": "sprynx",
   "private": true,
   "version": "0.0.0",
-  "homepage": "hhtp://obeespace.github.io/sprynx",
   "scripts": {
     "dev": "vite dev --port 3300",
     "build": "tsc && vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "preview": "vite preview"
   },
   "dependencies": {
