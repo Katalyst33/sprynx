@@ -1,24 +1,31 @@
-import React from 'react'
-import {FaChevronCircleDown} from 'react-icons/fa'
-import {FaChevronCircleUp} from 'react-icons/fa'
+import React from "react";
 
 const DropDown = (props: any) => {
-    const [drop, setDrop] = React.useState(false);
+  const [drop, setDrop] = React.useState(false);
 
-    function toggleDrop(){
-        setDrop(!drop);
-    }
+  function toggleDrop() {
+    setDrop(!drop);
+  }
   return (
     <div>
-        <li className="package-item bg-white" onClick={toggleDrop}>
-            <div className="px-1 py-1">{props.title}</div>
-            <div className="flex whole border rounded-full w-4 h-4 text-black-300">
-                {drop === false ? <FaChevronCircleDown /> : <FaChevronCircleUp />}
-            </div>
-        </li>
-        {drop && <div className="text-sm mx-3 text-black mb-5">{props.description}</div>}
+      <li
+        className="package-item bg-blue-500 cursor-pointer"
+        onClick={toggleDrop}
+      >
+        <div className="px-1 py-1 text-white">{props.title}</div>
+        <div className="flex whole   w-4 h-4 text-white">
+          {drop === false ? (
+            <i className="fa-solid fa-angle-down"></i>
+          ) : (
+            <i className="fa-solid fa-angle-up"></i>
+          )}
+        </div>
+      </li>
+      {drop && (
+        <div className="text-sm mx-3 text-black mb-5">{props.description}</div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default DropDown
+export default DropDown;
