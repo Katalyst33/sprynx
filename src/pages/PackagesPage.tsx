@@ -4,7 +4,7 @@ import PackageCardComponent from "../components/PackageCardComponent";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 
-import { allPackages } from "../db/packages.json";
+import allPackages from "../db/allPackagesDetails.json";
 
 function PackagesPage() {
   const packageData = {
