@@ -8,7 +8,7 @@ export default function ServiceDropDownComponent(props: any) {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="p-2 bg-blue-500 w-full text-white text-left flex justify-between">
+              <Disclosure.Button className="px-2 py-1 border-b w-full text-white text-left flex justify-between">
                 <div>{service.title}</div>
                 <div>
                   {open ? (
@@ -26,7 +26,7 @@ export default function ServiceDropDownComponent(props: any) {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel className="text-white bg-blue-500 p-2">
+                <Disclosure.Panel className="text-white  p-2">
                   {service.description}
                 </Disclosure.Panel>
               </Transition>

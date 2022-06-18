@@ -21,9 +21,9 @@ export default function PackageCardComponent(props: PackageCardTypings) {
   }
 
   return (
-    <div className="my-40">
+    <div className="my-40 ">
       {/* <Debug data={packageInfo} /> */}
-      <div className="bg-blue-400 py-4 px-7 w-[320px] shadow-sm shadow-slate-900 rounded-2xl">
+      <div className="group bg-blue-500 py-4 px-7 w-[320px] shadow-sm shadow-slate-900 rounded-2xl">
         <h1 className="text-white text-3xl mt-2 mb-3">{packageInfo.title}</h1>
         <p className="text-white">{packageInfo.description}</p>
 
@@ -68,7 +68,7 @@ export default function PackageCardComponent(props: PackageCardTypings) {
             <p className="text-xs text-white">{packageInfo.logistics}</p>
           </div>
           <div className="text-center my-4 ">
-            <button className="bg-slate-100 text-blue-600 rounded-xl px-20 py-2 shadow-md shadow-slate-900">
+            <button className="bg-slate-100 text-blue-600 px-14 group-hover:px-20 py-2 shadow-md  transition-all duration-200">
               I Want This
             </button>
           </div>
