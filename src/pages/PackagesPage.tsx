@@ -167,11 +167,12 @@ function PackagesPage() {
         </h1>
         {/* grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 w-5/6 mx-auto */}
         <section className="flex items-center">
-          <BsChevronLeft
-            size={30}
-            onClick={sliderleft}
-            className="hidden lg:block  opacity-20 hover:opacity-100"
-          />
+          <button>
+            <i
+              onClick={sliderleft}
+              className="fa-regular fa-angle-left text-5xl lg:block hidden text-blue-400 opacity-40  font-extrabold   cursor-pointer hover:opacity-100"
+            ></i>
+          </button>
           <div
             id="slider"
             className="mx-5 flex gap-8 w-full h-full overflow-x-scroll scroll-smooth scrollbar-hide"
@@ -180,11 +181,12 @@ function PackagesPage() {
               <PackageCardComponent key={index} packageInfo={packageInfo} />
             ))}
           </div>
-          <BsChevronRight
-            className="lg:block hidden opacity-20 hover:opacity-100"
-            size={30}
-            onClick={slideright}
-          />
+          <button>
+            <i
+              onClick={slideright}
+              className="fa-regular fa-angle-right text-5xl lg:block hidden text-blue-400 opacity-40  font-extrabold   cursor-pointer hover:opacity-100"
+            ></i>
+          </button>
         </section>
       </div>
     </>

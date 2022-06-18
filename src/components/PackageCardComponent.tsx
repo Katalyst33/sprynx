@@ -21,7 +21,7 @@ export default function PackageCardComponent(props: PackageCardTypings) {
   }
 
   return (
-    <div className="">
+    <div className="my-40">
       {/* <Debug data={packageInfo} /> */}
       <div className="bg-blue-400 py-4 px-7 w-[320px] shadow-sm shadow-slate-900 rounded-2xl">
         <h1 className="text-white text-3xl mt-2 mb-3">{packageInfo.title}</h1>
@@ -53,15 +53,20 @@ export default function PackageCardComponent(props: PackageCardTypings) {
         </div>
 
         <div>
-          <h1 className="text-white">Duration: {packageInfo.duration}</h1>
           <h1 className="text-white">
-            Regular Car {packageInfo.regularCar}
+            <i className="fa-regular fa-timer"></i>: {packageInfo.duration}
+          </h1>
+          <h1 className="text-white">
+            Regular Car{" "}
+            <span className="text-2xl"> {packageInfo.regularCar}</span>
           </h1>{" "}
-          <h1 className="text-white">Large Car {packageInfo.largeCar}</h1>
-          <p className="mt-8">
-            F{" "}
-            <span className="text-xs text-white">{packageInfo.logistics}</span>
-          </p>
+          <h1 className="text-white">
+            Large Car<span className="text-2xl">{packageInfo.largeCar}</span>
+          </h1>
+          <div className="mt-8 flex items-center gap-x-2">
+            <i className="fa-regular fa-circle-exclamation text-yellow-500"></i>
+            <p className="text-xs text-white">{packageInfo.logistics}</p>
+          </div>
           <div className="text-center my-4 ">
             <button className="bg-slate-100 text-blue-600 rounded-xl px-20 py-2 shadow-md shadow-slate-900">
               I Want This
