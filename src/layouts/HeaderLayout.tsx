@@ -1,8 +1,12 @@
+import companyLogo from "../assets/sprynx-logo.png";
+
 function HeaderLayout() {
   return (
     <>
-      <div className="flex justify-between p-4">
-        <div>LOGO</div>
+      <div className="flex justify-between items-center px-10">
+        <div>
+          <img className="w-28" src={companyLogo} />
+        </div>
         <ul className="flex gap-x-4">
           <li>Home</li>
           <li>About Us</li>
