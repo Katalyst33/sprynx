@@ -13,8 +13,9 @@ const ProtectedRoutes = () => {
 
       <h1>Protected Routes</h1>
       <Routes>
+      {/* element={<dashboard />} */}
         <Route path="/" element={<ProtectedLayouts />}>
-          <Route path="/dashboard" element={<dashboard />} />
+          <Route path="/dashboard" />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

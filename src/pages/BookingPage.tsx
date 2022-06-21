@@ -3,9 +3,9 @@ import {RiErrorWarningLine} from 'react-icons/ri'
 
 const InfoPage = () => {
   return (
-    <div className='w-5/6 lg:w-9/12 mx-auto my-16'>
-        <h1 className='text-2xl pt-5'>Personal Information</h1>
-        <p className='text-base'>Use a permanent address where you can receive mail</p>
+    <div className='w-5/6 lg:w-9/12 mx-auto my-16 text-left'>
+        <h1 className='text-2xl pt-5 mb-1'>Personal Information</h1>
+        <p className='text-base mb-4'>Use a permanent address where you can receive mail</p>
         <br/>
         <form className='flex gap-1 flex-col'>
             <div className='flex gap-2 flex-col lg:flex-row lg:gap-2'>

@@ -10,7 +10,6 @@ function HeaderLayout() {
         </div>
         <ul className="flex gap-x-4">
           <NavLink to="/">Home</NavLink>
-
           <Link to="/about">About Us</Link>
           <NavLink to="/all-packages">Our Packages</NavLink>
           <NavLink to="/services">Our Services</NavLink>
