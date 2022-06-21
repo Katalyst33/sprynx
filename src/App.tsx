@@ -1,21 +1,24 @@
 import logo from "./logo.svg";
 import "./css/App.css";
-import HeaderLayout from "./layouts/HeaderLayout";
-import PackagesPage from "./pages/PackagesPage";
 import FloatingNav from "./layouts/FloatingNav";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
-import Footer from "./layouts/Footer";
-import InfoPage from "./pages/InfoPage";
+import BookingPage from "./pages/BookingPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
+import ProtectedRoutes from "./routes/ProtectedRoutes";
+import GuestRoutes from "./routes/GuestRoutes";
 
 function App() {
   return (
     <>
-      <HeaderLayout />
-      {/* <FloatingNav /> */}
-      <PackagesPage />
-      <Footer />
-      <InfoPage />
+      <div>
+        <Routes>
+          {/* <Route path="/*" element={<ProtectedRoutes />} /> */}
+          <Route path="/*" element={<GuestRoutes />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
     </>
   );
 }
