@@ -6,6 +6,7 @@ import { BsChevronDown } from "react-icons/bs";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 import DropDown from "./DropDown";
+import { Link, NavLink } from "react-router-dom";
 
 import ServiceDropDownComponent from "./ServiceDropDownComponent";
 import {
@@ -37,19 +38,6 @@ export default function PackageCardComponent(props: PackageCardTypings) {
               )
             )}
           </ul>
-
-          {/*   <ul>
-            {packageInfo.services.map(
-              (service: PackageServiceTypings, index: number) => (
-                <div key={index}>
-                  <DropDown
-                    title={service.title}
-                    description={service.description}
-                  />
-                </div>
-              )
-            )}
-          </ul> */}
         </div>
 
         <div>
@@ -68,9 +56,12 @@ export default function PackageCardComponent(props: PackageCardTypings) {
             <p className="text-xs text-white">{packageInfo.logistics}</p>
           </div>
           <div className="text-center my-4 ">
-            <button className="bg-slate-100 text-blue-600 px-14 group-hover:px-20 py-2 shadow-md  transition-all duration-200">
+            <NavLink
+              to="/booking"
+              className="bg-slate-100 text-blue-600 px-14 group-hover:px-20 py-2 shadow-md  transition-all duration-200"
+            >
               I Want This
-            </button>
+            </NavLink>
           </div>
         </div>
       </div>
