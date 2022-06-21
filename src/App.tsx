@@ -3,6 +3,8 @@ import "./css/App.css";
 import HeaderLayout from "./layouts/HeaderLayout";
 import PackagesPage from "./pages/PackagesPage";
 import FloatingNav from "./layouts/FloatingNav";
+import { Route, Routes, useNavigate } from "react-router-dom";
+
 import Footer from "./layouts/Footer";
 import InfoPage from "./pages/InfoPage";
 
