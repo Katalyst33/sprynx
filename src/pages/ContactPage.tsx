@@ -29,10 +29,10 @@ const ContactPage = () => {
             </div>
           </div>
           <div className="mt-6 mb-8 lg:w-4/6 shadow-sm shadow-blue-200 flex flex-col items-center gap-5 py-20">
-            <input placeholder="Name" className="px-4 py-6 border-2 border-black bg-blue-100"/>
-            <input placeholder="Email" className="px-4 py-6 bg-blue-100"/>
-            <textarea className="px-4 py-6 bg-blue-100 rounded-md" placeholder="Feedback" rows={6} cols={34}/>
-            <button className="pointer hover:bg-blue-700 bg-blue-900 rounded-md px-5 py-2 text-white">Send Message</button>
+            <input placeholder="Name" className="px-3 py-2 border-2 border-blue-900 rounded-md w-4/6"/>
+            <input placeholder="Email" className="px-3 py-2 border-2 border-blue-900 rounded-md w-4/6"/>
+            <textarea className="px-4 py-2 border-2 border-blue-900 rounded-md w-4/6" placeholder="Feedback" rows={6}/>
+            <button className="pointer hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white">Send Message</button>
           </div>
         </div>
       </div>

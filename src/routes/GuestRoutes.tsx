@@ -23,7 +23,7 @@ const GuestRoutes = () => {
           <Route path="/all-packages" element={<PackagesPage />} />
           <Route path="/booking" element={<BookingPage />} />
           <Route path="contact-us" element={<ContactPage />} />
-          
+          <Route path="register" element={<RegisterPage />}/>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
