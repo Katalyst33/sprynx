@@ -10,6 +10,9 @@ import ProtectedRoutes from "./routes/ProtectedRoutes";
 import GuestRoutes from "./routes/GuestRoutes";
 
 function App() {
+  function loadapp (){
+    // Run on APPload
+  }
   return (
     <>
       <div>

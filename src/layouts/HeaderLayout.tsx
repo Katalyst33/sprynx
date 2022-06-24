@@ -13,7 +13,7 @@ function HeaderLayout() {
           <Link to="/about">About Us</Link>
           <NavLink to="/all-packages">Our Packages</NavLink>
           <NavLink to="/services">Our Services</NavLink>
-          <NavLink to="/contact">Contact Us</NavLink>
+          <NavLink to="/contact-us">Contact Us</NavLink>
         </ul>
       </div>
     </>

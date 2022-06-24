@@ -22,7 +22,7 @@ const Footer = () => {
           We believe in exceptional customer service, outstanding quality and
           well-crafted software.
         </h4>
-        <div className="flex justify-center text-gray-600 gap-10 my-10 flex-col lg:flex-row lg:gap-y-0">
+        <div className="flex justify-center text-gray-600 gap-10 my-10 flex-col md:flex-row lg:gap-y-0">
           <a className="hover:text-blue-900 cursor-pointer">Home</a>
           <a className="hover:text-blue-900 cursor-pointer">Service</a>
           <a className="hover:text-blue-900 cursor-pointer">About Us</a>

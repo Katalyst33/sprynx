@@ -7,6 +7,8 @@ import NotFoundPage from "../pages/NotFoundPage";
 import HeaderLayout from "../layouts/HeaderLayout";
 import Footer from "../layouts/Footer";
 import BookingPage from "../pages/BookingPage";
+import ContactPage from "../pages/ContactPage";
+
 
 import React from "react";
 
@@ -20,6 +22,8 @@ const GuestRoutes = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/all-packages" element={<PackagesPage />} />
           <Route path="/booking" element={<BookingPage />} />
+          <Route path="contact-us" element={<ContactPage />} />
+          
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
