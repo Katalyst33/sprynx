@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 const LoginPage = () => {
   return (
     <div className="bg-blue-100 w-4/6 mx-auto mt-24 shadow-sm rounded-lg">

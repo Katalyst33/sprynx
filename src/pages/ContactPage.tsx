@@ -8,9 +8,9 @@ import {BsFacebook} from "react-icons/bs"
 
 const ContactPage = () => {
     return (
-      <div className=" ">
+      <div className="mt-60">
         <div>
-          <h1 className="mt-32 text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl lg:text-6xl">Get in touch</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl lg:text-6xl">Get in touch</h1>
           <p className="mt-2">Visit us Today, contact or leave us a message on our socials</p>
         </div>
         <div className="my-16 lg:flex lg:gap-4 w-5/6 mx-auto">
@@ -29,9 +29,9 @@ const ContactPage = () => {
             </div>
           </div>
           <div className="mt-6 mb-8 lg:w-4/6 shadow-sm shadow-blue-200 flex flex-col items-center gap-5 py-20">
-            <input placeholder="Name" className="px-3 py-2 border-2 border-blue-900 rounded-md w-4/6"/>
-            <input placeholder="Email" className="px-3 py-2 border-2 border-blue-900 rounded-md w-4/6"/>
-            <textarea className="px-4 py-2 border-2 border-blue-900 rounded-md w-4/6" placeholder="Feedback" rows={6}/>
+            <input placeholder="Name" className="px-3 py-2 shadow-sm shadow-blue-700 focus:ring-2 rounded-md w-4/6"/>
+            <input placeholder="Email" className="px-3 py-2 shadow-sm shadow-blue-700 focus:ring-2 rounded-md w-4/6"/>
+            <textarea className="px-4 py-2 shadow-sm shadow-blue-700 focus:ring-2 rounded-md w-4/6" placeholder="Feedback" rows={6}/>
             <button className="pointer hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white">Send Message</button>
           </div>
         </div>
