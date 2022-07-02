@@ -8,9 +8,11 @@ import HeaderLayout from "../layouts/HeaderLayout";
 import Footer from "../layouts/Footer";
 import BookingPage from "../pages/BookingPage";
 import ContactPage from "../pages/ContactPage";
+import OurServicesPage from "../pages/OurServicesPage"
 
 
 import React from "react";
+import AboutUsPage from "../pages/AboutUsPage";
 
 const GuestRoutes = () => {
   return (
@@ -24,6 +26,8 @@ const GuestRoutes = () => {
           <Route path="/booking" element={<BookingPage />} />
           <Route path="contact-us" element={<ContactPage />} />
           <Route path="register" element={<RegisterPage />}/>
+          <Route path="about" element={<AboutUsPage/>}/>
+          <Route path="services" element={<OurServicesPage/>}/>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

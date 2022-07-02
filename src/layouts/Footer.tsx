@@ -14,15 +14,15 @@ const Footer = () => {
           Mon, Tues & Wed: 8am - 7pm Thurs: 8am - 4pm Fri: 8am - 7pm Sat: 9am -
           7pm Sun: Off
         </h4>
-        <img className="w-28" src={companyLogo} />
+        <img className="w-28 mx-auto mt-12" src={companyLogo} />
 
-        <h4 className="mt-3">
+        <h4 className="mt-1">
           Sprynx Multi is a technology start up delivering car services directly
           to its customers’ doorstep. <br />
           We believe in exceptional customer service, outstanding quality and
           well-crafted software.
         </h4>
-        <div className="flex justify-center text-gray-600 gap-10 my-10 flex-col md:flex-row lg:gap-y-0">
+        <div className="flex justify-center text-white gap-10 my-10 flex-col md:flex-row lg:gap-y-0">
           <a className="hover:text-blue-900 cursor-pointer">Home</a>
           <a className="hover:text-blue-900 cursor-pointer">Service</a>
           <a className="hover:text-blue-900 cursor-pointer">About Us</a>
