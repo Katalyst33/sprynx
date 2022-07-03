@@ -8,8 +8,8 @@ import HeaderLayout from "../layouts/HeaderLayout";
 import Footer from "../layouts/Footer";
 import BookingPage from "../pages/BookingPage";
 import ContactPage from "../pages/ContactPage";
-import OurServicesPage from "../pages/OurServicesPage"
-
+import OurServicesPage from "../pages/OurServicesPage";
+import CreatePackagePage from "../pages/CreatePackagePage";
 
 import React from "react";
 import AboutUsPage from "../pages/AboutUsPage";
@@ -23,11 +23,12 @@ const GuestRoutes = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/all-packages" element={<PackagesPage />} />
+          <Route path="/create-package" element={<CreatePackagePage />} />
           <Route path="/booking" element={<BookingPage />} />
           <Route path="contact-us" element={<ContactPage />} />
-          <Route path="register" element={<RegisterPage />}/>
-          <Route path="about" element={<AboutUsPage/>}/>
-          <Route path="services" element={<OurServicesPage/>}/>
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="about" element={<AboutUsPage />} />
+          <Route path="services" element={<OurServicesPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
