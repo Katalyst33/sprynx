@@ -7,11 +7,13 @@ import { BsChevronRight } from "react-icons/bs";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import DebugDataComponent from "../components/DebugDataComponent";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function PackagesPage() {
   const [allPackagesData, setAllPackagesData] = useState([]);
   const [isPending, setIsPending] = useState(true);
+
+  const navigate = useNavigate();
 
   function slideright() {
     const slid: any = document.getElementById("slider");
