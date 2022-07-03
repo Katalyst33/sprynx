@@ -1,0 +1,122 @@
+{
+  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" },
+  "packages": [
+    {
+      "title": "Golden",
+      "description": "Popular package",
+      "regularCar": "N43,830",
+      "duration": "8 - 9 hours",
+      "largeCar": "N53,830",
+      "logistics": "5,500 extra Logistics fee to Mainland.",
+      "services": [
+        {
+          "title": "Exterior",
+          "description": "Exterior cleaning"
+        },
+        {
+          "title": "Interior",
+          "description": "Interior cleaning"
+        },
+        {
+          "title": "Engine",
+          "description": "Engine cleaning"
+        }
+      ],
+      "link": "golden-package"
+    },
+    {
+      "title": "Silver",
+      "description": "Popular package",
+      "regularCar": "N43,830",
+      "duration": "8 - 9 hours",
+      "largeCar": "N53,830",
+      "logistics": "5,500 extra Logistics fee to Mainland.",
+      "services": [
+        {
+          "title": "Exterior",
+          "description": "Exterior cleaning"
+        },
+        {
+          "title": "Interior",
+          "description": "Interior cleaning"
+        },
+        {
+          "title": "Engine",
+          "description": "Engine cleaning"
+        }
+      ],
+      "link": "golden-package"
+    },
+    {
+      "title": "Silver",
+      "description": "Popular package",
+      "regularCar": "N43,830",
+      "duration": "8 - 9 hours",
+      "largeCar": "N53,830",
+      "logistics": "5,500 extra Logistics fee to Mainland.",
+      "services": [
+        {
+          "title": "Exterior",
+          "description": "Exterior cleaning"
+        },
+        {
+          "title": "Interior",
+          "description": "Interior cleaning"
+        },
+        {
+          "title": "Engine",
+          "description": "Engine cleaning"
+        }
+      ],
+      "link": "golden-package"
+    },
+    {
+      "title": "Silver",
+      "description": "Popular package",
+      "regularCar": "N43,830",
+      "duration": "8 - 9 hours",
+      "largeCar": "N53,830",
+      "logistics": "5,500 extra Logistics fee to Mainland.",
+      "services": [
+        {
+          "title": "Exterior",
+          "description": "Exterior cleaning"
+        },
+        {
+          "title": "Interior",
+          "description": "Interior cleaning"
+        },
+        {
+          "title": "Engine",
+          "description": "Engine cleaning"
+        }
+      ],
+      "link": "golden-package"
+    },
+    {
+      "title": "Diamond",
+      "description": "Popular package",
+      "regularCar": "N43,830",
+      "duration": "8 - 9 hours",
+      "largeCar": "N53,830",
+      "logistics": "5,500 extra Logistics fee to Mainland.",
+      "services": [
+        {
+          "title": "Exterior",
+          "description": "Exterior cleaning"
+        },
+        {
+          "title": "Interior",
+          "description": "Interior cleaning"
+        },
+        {
+          "title": "Engine",
+          "description": "Engine cleaning"
+        }
+      ],
+      "link": "golden-package"
+    }
+  ]
+}
