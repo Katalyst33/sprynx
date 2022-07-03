@@ -16,7 +16,7 @@ const AboutUsPage = () => {
           <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">About Sprynx Multi</h1>
           <p className="mt-2">Sprynx Multi is a technology start up delivering car services directly to its customers’ doorstep.</p>
         </div>
-        <div className='mt-32 w-10/12 mx-auto py-14 px-6 lg:flex lg:px-10 lg:gap-8'>
+        <div className='mt-32 w-5/6 mx-auto py-14 px-6 lg:flex lg:px-10 lg:gap-8'>
           <div className='mt-6 py-10 px-7 rounded-xl w-[350px]'>
             <h3 className='font-bold text-lg text-blue-400 mb-2 mt-4'>OUR PACKAGES</h3>
             <p>We built the perfect packages, just for you! Whether you want a classic car wash or a full detailing, we’ve got you covered!</p>
