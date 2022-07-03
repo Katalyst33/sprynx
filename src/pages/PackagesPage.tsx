@@ -7,6 +7,7 @@ import { BsChevronRight } from "react-icons/bs";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import DebugDataComponent from "../components/DebugDataComponent";
+import { Link } from "react-router-dom";
 
 function PackagesPage() {
   const [allPackagesData, setAllPackagesData] = useState([]);
@@ -28,13 +29,10 @@ function PackagesPage() {
       .then((response) => {
         setAllPackagesData(response.data);
         setIsPending(false);
-
         // handle success
-        console.log("i fetched succesfully  ", response);
       })
       .catch((error) => {
         setIsPending(false);
-
         // handle error
         console.log("i did not fetch anything", error);
       });
@@ -89,17 +87,19 @@ function PackagesPage() {
           </div>
         )}
 
-        {!allPackagesData.length && (
+        {allPackagesData.length && (
           <div>
             <h1 className="my-10">Not Packages Yet ...</h1>
 
-            <button
-              type="button"
-              className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              <i className="fa-solid fa-box-archive px-4"></i>
-              Create A Package
-            </button>
+            <Link to="/create-package">
+              <button
+                type="button"
+                className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                <i className="fa-solid fa-box-archive px-4"></i>
+                Create A Package
+              </button>
+            </Link>
           </div>
         )}
       </div>
