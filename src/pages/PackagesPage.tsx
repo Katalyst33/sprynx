@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import DebugDataComponent from "../components/DebugDataComponent";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
-function PackagesPage() {
+function PackagesPage(props:any) {
   const [allPackagesData, setAllPackagesData] = useState([]);
   const [isPending, setIsPending] = useState(true);
 
@@ -38,6 +38,10 @@ function PackagesPage() {
         // handle error
         console.log("i did not fetch anything", error);
       });
+  }
+
+  function deleteCard(id: any){
+    console.log("i got deleted")
   }
 
   useEffect(() => {
@@ -76,7 +80,7 @@ function PackagesPage() {
                 className="mx-5 flex gap-8 w-full h-full overflow-x-scroll scroll-smooth scrollbar-hide"
               >
                 {allPackagesData.map((packageInfo, index) => (
-                  <PackageCardComponent key={index} packageInfo={packageInfo} />
+                  <PackageCardComponent key={index} packageInfo={packageInfo} deletePackageCard={deleteCard} />
                 ))}
               </div>
               <button>

@@ -12,8 +12,10 @@ export interface PackageInfoTypings {
   regularCar: string;
   largeCar: string;
   logistics: string;
+
 }
 
 export interface PackageCardTypings {
   packageInfo: PackageInfoTypings;
+  deletePackageCard: any;
 }
