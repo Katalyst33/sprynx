@@ -28,7 +28,7 @@ export default function PackageCardComponent(props: PackageCardTypings) {
   return (
     <div className="my-40 ">
       {/* <Debug data={packageInfo} /> */}
-      <div className="group bg-blue-500 py-4 px-7 w-[320px] shadow-sm shadow-slate-900 rounded-2xl">
+      <div className="group bg-blue-500 py-8 px-7 w-[320px] shadow-sm shadow-slate-900 rounded-2xl">
         <h1 className="text-white text-3xl mt-2 mb-3">{packageInfo.title}</h1>
         <p className="text-white">{packageInfo.description}</p>
 
@@ -44,18 +44,18 @@ export default function PackageCardComponent(props: PackageCardTypings) {
           </ul>
         </div>
 
-        <div>
+        <div className="text-left space-y-2">
           <h1 className="text-white">
             <i className="fa-regular fa-timer"></i>: {packageInfo.duration}
           </h1>
           <h1 className="text-white">
             Regular Car{" "}
-            <span className="text-2xl"> {packageInfo.regularCar}</span>
+            <span className="text-xl"> {packageInfo.regularCar}</span>
           </h1>{" "}
           <h1 className="text-white">
-            Large Car<span className="text-2xl">{packageInfo.largeCar}</span>
+            Large Car<span className="text-xl">{packageInfo.largeCar}</span>
           </h1>
-          <div className="mt-8 flex items-center gap-x-2">
+          <div className="mt-8 flex items-center gap-x-2 py-2">
             <i className="fa-regular fa-circle-exclamation text-yellow-500"></i>
             <p className="text-xs text-white">{packageInfo.logistics}</p>
           </div>
