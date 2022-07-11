@@ -70,7 +70,7 @@
       "link": "golden-package"
     },
     {
-      "id": "4",
+      "id": "7",
       "title": "Vibranium Ultra",
       "description": "Best package",
       "regularCar": "N200,830",
@@ -116,6 +116,26 @@
       "largeCar": "N50,000",
       "logistics": "N2,000",
       "id": "dlb7gH9"
+    },
+    {
+      "id": "4",
+      "title": "Vibranium Ultra",
+      "description": "Best package",
+      "regularCar": "N200,830",
+      "duration": "24 hours",
+      "largeCar": "N250,830",
+      "logistics": "50,500 extra Logistics fee to Mainland.",
+      "services": [
+        {
+          "title": "Exterior",
+          "description": "Exterior cleaning"
+        },
+        {
+          "title": "Interior",
+          "description": "Interior cleaning"
+        }
+      ],
+      "link": "golden-package"
     }
   ]
 }
