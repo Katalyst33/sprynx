@@ -4,12 +4,14 @@ import PackageCardComponent from "../components/PackageCardComponent";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 
-import axios from "axios";
 import { useEffect, useState } from "react";
 import DebugDataComponent from "../components/DebugDataComponent";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { $axios } from "../service/http";
 
-function PackagesPage(props:any) {
+import { PackageInfoTypings } from "../typings/AllTypings";
+
+function PackagesPage(props: any) {
   const [allPackagesData, setAllPackagesData] = useState([]);
   const [isPending, setIsPending] = useState(true);
 
@@ -26,10 +28,11 @@ function PackagesPage(props:any) {
   }
 
   function fetchAllPackages() {
-    axios
-      .get("http://localhost:5100/packages")
-      .then((response) => {
-        setAllPackagesData(response.data);
+    $axios
+      .get("/packages")
+      .then((response: any) => {
+        console.log(response);
+        setAllPackagesData(response);
         setIsPending(false);
         // handle success
       })
@@ -40,8 +43,8 @@ function PackagesPage(props:any) {
       });
   }
 
-  function deleteCard(id: any){
-    console.log("i got deleted")
+  function deleteCard(id: any) {
+    console.log("i got deleted");
   }
 
   useEffect(() => {
@@ -80,7 +83,11 @@ function PackagesPage(props:any) {
                 className="mx-5 flex gap-8 w-full h-full overflow-x-scroll scroll-smooth scrollbar-hide"
               >
                 {allPackagesData.map((packageInfo, index) => (
-                  <PackageCardComponent key={index} packageInfo={packageInfo} deletePackageCard={deleteCard} />
+                  <PackageCardComponent
+                    key={index}
+                    packageInfo={packageInfo}
+                    deletePackageCard={deleteCard}
+                  />
                 ))}
               </div>
               <button>
