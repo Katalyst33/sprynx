@@ -10,6 +10,7 @@ import ProtectedRoutes from "./routes/ProtectedRoutes";
 import GuestRoutes from "./routes/GuestRoutes";
 import AdminRoutes from "./routes/AdminRoutes";
 import { RequireAuth } from "./routes/RequireAuth";
+import { RequireAdminAuth } from "./routes/RequireAdminAuth";
 
 function App() {
   function loadapp() {
@@ -38,7 +39,14 @@ function App() {
               </RequireAuth>
             }
           />
-          <Route path="*" element={<AdminRoutes />} />
+          <Route
+            path="/manager/*"
+            element={
+              <RequireAdminAuth>
+                <AdminRoutes />
+              </RequireAdminAuth>
+            }
+          />
         </Routes>
       </div>
     </>

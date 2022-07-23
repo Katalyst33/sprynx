@@ -6,16 +6,12 @@ import NotFoundPage from "../pages/NotFoundPage";
 
 import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import LoginPage from "../pages/auth/LoginPage";
-import Dashboard from "../pages/user/Dashboard";
+import UserDashboardPage from "../pages/user/userDashboardPage";
 import ProfilePage from "../pages/user/ProfilePage";
 import PackagesPage from "../pages/PackagesPage";
 import { Link } from "react-router-dom";
 
 const ProtectedRoutes = () => {
-  const location = useLocation();
-
-  const isLoggedIn = false;
-
   return (
     <>
       {/* <HeaderLayout /> */}
@@ -43,10 +39,12 @@ const ProtectedRoutes = () => {
 
       <Routes>
         <Route path="/" element={<ProtectedLayouts />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<UserDashboardPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Routes>
+
+      <div className="bg-gray-600 p-10">Footer</div>
       {/* <Footer /> */}
     </>
   );

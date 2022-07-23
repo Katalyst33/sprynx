@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 
 type MyComponentProps = React.PropsWithChildren<{}>;
 
-export const RequireAuth = ({ children }: any) => {
+export const RequireAdminAuth = ({ children }: any) => {
   const isLoggedIn = true;
 
   const LoggedInUser = {
@@ -11,7 +11,7 @@ export const RequireAuth = ({ children }: any) => {
     role: ["user", "admin"],
   };
 
-  if (isLoggedIn && LoggedInUser.role.includes("user")) {
+  if (isLoggedIn && LoggedInUser.role.includes("admin")) {
     return children;
   }
 

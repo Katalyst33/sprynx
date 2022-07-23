@@ -5,23 +5,21 @@ import AdminLayouts from "../layouts/AdminLayouts";
 import NotFoundPage from "../pages/NotFoundPage";
 
 import { Route, Routes } from "react-router-dom";
+import AdminDashboardPage from "../pages/admin/AdminDashboardPage";
 
-const ProtectedRoutes = () => {
+const AdminRoutes = () => {
   return (
     <>
-      <HeaderLayout />
-
-      <h1>Protected Routes</h1>
+      <h1>manager Routes</h1>
       <Routes>
         {/* element={<dashboard />} */}
-        <Route path="/" element={<ProtectedLayouts />}>
-          <Route path="/dashboard" />
+        <Route path="/" element={<AdminLayouts />}>
+          <Route path="/dashboard" element={<AdminDashboardPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
     </>
   );
 };
 
-export default ProtectedRoutes;
+export default AdminRoutes;
