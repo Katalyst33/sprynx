@@ -1,4 +1,5 @@
 export interface PackageServiceTypings {
+  id: string;
   title: string;
   description: string;
 }

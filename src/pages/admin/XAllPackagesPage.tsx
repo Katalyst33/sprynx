@@ -26,28 +26,29 @@ const XAllPackagesPage = () => {
   }
 
   function handleDelete(id: string) {
-    console.log(id);
     // prompt user to confirm deletion
+    if (window.confirm("Are you sure you want to delete this package?")) {
+      $axios
+        .delete(`/packages/${id}`)
+        .then((response: any) => {
+          fetchAllPackages();
+          // handle success
+        })
+        .catch((error) => {
+          // handle error
+          return error;
+        });
+    }
+
     // if confirmed, delete the package
   }
-  /*   $axios
-  .delete(`/packages/${id}`)
-  .then((response: any) => {
-    console.log(response);
-    // handle success
-  })
-  .catch((error) => {
-    // handle error
-    console.log("i did not delete anything", error);
-  }); */
+
   useEffect(() => {
     fetchAllPackages();
   }, []);
 
   return (
-    <div className="">
-      {JSON.stringify(allPackagesData[0])}
-
+    <div>
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">

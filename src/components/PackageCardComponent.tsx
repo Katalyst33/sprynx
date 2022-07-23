@@ -21,9 +21,7 @@ export default function PackageCardComponent(props: PackageCardTypings) {
     setDrop(!drop);
   }
 
-  function handleDelete(props:any){
-    
-  }
+  function handleDelete(props: any) {}
 
   return (
     <div className="my-40 ">
@@ -34,13 +32,13 @@ export default function PackageCardComponent(props: PackageCardTypings) {
 
         <div>
           <ul>
-            {/* {packageInfo.services.map(
+            {packageInfo.services.map(
               (service: PackageServiceTypings, index: number) => (
                 <div key={index}>
                   <ServiceDropDownComponent service={service} />
                 </div>
               )
-            )} */}
+            )}
           </ul>
         </div>
 
@@ -67,7 +65,12 @@ export default function PackageCardComponent(props: PackageCardTypings) {
               I Want This
             </NavLink>
           </div>
-          <button onClick={handleDelete} className="bg-slate-100 text-blue-600 px-14 hover:text-blue-900 py-2 shadow-md  transition-all duration-200">Delete</button>
+          <button
+            onClick={handleDelete}
+            className="bg-slate-100 text-blue-600 px-14 hover:text-blue-900 py-2 shadow-md  transition-all duration-200"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

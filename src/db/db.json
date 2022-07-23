@@ -73,60 +73,57 @@
       "link": "golden-package"
     },
     {
-      "0": {
-        "id": 195,
-        "title": "",
-        "description": "",
-        "regularCar": "",
-        "duration": "",
-        "largeCar": "",
-        "logistics": "",
-        "services": [
-          {
-            "title": "",
-            "description": ""
-          },
-          {
-            "title": "",
-            "description": ""
-          }
-        ]
-      },
-      "title": "Quo est minima est ",
-      "description": "Et sint quibusdam m",
-      "regularCar": "Consequatur Velit n",
-      "duration": "Incidunt id vitae i",
-      "largeCar": "Aut commodi rerum ut",
-      "logistics": "Dolorum voluptatem e",
-      "id": "Xdk8Bs0"
+      "id": 523,
+      "title": "Inventore optio rem",
+      "description": "Voluptas id ut est",
+      "regularCar": "Dolorem aut totam ve",
+      "duration": "Suscipit quaerat vol",
+      "largeCar": "Aliquid necessitatib",
+      "logistics": "Ut ullamco laborum a",
+      "services": [
+        {
+          "id": 661,
+          "title": "Full cleaning",
+          "description": "we wil clean devery where fotr you"
+        },
+        {
+          "id": 237,
+          "title": "Engine",
+          "description": "Engine cleaning"
+        },
+        {
+          "id": 236,
+          "title": "Interior",
+          "description": "Interior cleaning"
+        },
+        {
+          "id": 235,
+          "title": "Exterior",
+          "description": "Exterior cleaning"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": 235,
+      "title": "Exterior",
+      "description": "Exterior cleaning"
     },
     {
-      "0": {
-        "id": 502,
-        "title": "",
-        "description": "",
-        "regularCar": "",
-        "duration": "",
-        "largeCar": "",
-        "logistics": "",
-        "services": [
-          {
-            "title": "",
-            "description": ""
-          },
-          {
-            "title": "",
-            "description": ""
-          }
-        ]
-      },
-      "title": "Tempore ut aliqua ",
-      "description": "Voluptates odio aut ",
-      "regularCar": "Ex mollit distinctio",
-      "duration": "Quia perferendis mag",
-      "largeCar": "Voluptatem sequi tot",
-      "logistics": "Perspiciatis esse q",
-      "id": "42X9vtQ"
+      "id": 236,
+      "title": "Interior",
+      "description": "Interior cleaning"
+    },
+    {
+      "id": 237,
+      "title": "Engine",
+      "description": "Engine cleaning"
+    },
+    {
+      "id": 661,
+      "title": "Full cleaning",
+      "description": "we will clean up and dwon for you"
     }
   ]
 }
