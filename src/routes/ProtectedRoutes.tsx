@@ -4,20 +4,28 @@ import GuestLayouts from "../layouts/GuestLayouts";
 import ProtectedLayouts from "../layouts/ProtectedLayouts";
 import NotFoundPage from "../pages/NotFoundPage";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
+import LoginPage from "../pages/auth/LoginPage";
+import Dashboard from "../pages/user/Dashboard";
+import PackagesPage from "../pages/PackagesPage";
 
 const ProtectedRoutes = () => {
+  const location = useLocation();
+
+  const isLoggedIn = false;
+
   return (
     <>
       <HeaderLayout />
 
-      <h1>Protected Routes</h1>
+      <h1>All protected Routes</h1>
+
       <Routes>
-      {/* element={<dashboard />} */}
         <Route path="/" element={<ProtectedLayouts />}>
-          <Route path="/dashboard" />
+          <Route path="/all-packages" element={<PackagesPage />} />
+
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </>

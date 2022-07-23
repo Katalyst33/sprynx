@@ -1,25 +1,44 @@
 import logo from "./logo.svg";
 import "./css/App.css";
 import FloatingNav from "./layouts/FloatingNav";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
 import BookingPage from "./pages/BookingPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 import GuestRoutes from "./routes/GuestRoutes";
+import AdminRoutes from "./routes/AdminRoutes";
+import { RequireAuth } from "./routes/RequireAuth";
 
 function App() {
   function loadapp() {
     // Run on APPload
   }
+
+  // const loggedInUser = localStorage.getItem("currentUser");
+  const loggedInUser = {
+    id: 1,
+    email: "obee@gmail.com",
+    role: "user",
+  };
+
   return (
     <>
       <div>
         <Routes>
           {/* <Route path="/*" element={<ProtectedRoutes />} /> */}
           <Route path="/*" element={<GuestRoutes />} />
-          <Route path="*" element={<NotFoundPage />} />
+
+          <Route
+            path="/profile"
+            element={
+              <RequireAuth>
+                <ProtectedRoutes />
+              </RequireAuth>
+            }
+          />
+          <Route path="*" element={<AdminRoutes />} />
         </Routes>
       </div>
     </>

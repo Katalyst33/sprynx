@@ -1,7 +1,7 @@
 import { useNavigate, Outlet } from "react-router-dom";
 
-const ProtectedLayouts = () => {
+const AdminLayouts = () => {
   return <Outlet />;
 };
 
-export default ProtectedLayouts;
+export default AdminLayouts;
