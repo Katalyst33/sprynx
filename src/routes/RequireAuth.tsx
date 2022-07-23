@@ -13,9 +13,7 @@ export const RequireAuth = ({ children }: any) => {
 
   if (isLoggedIn && LoggedInUser.role.includes("user")) {
     return children;
-  }
-
-  if (!isLoggedIn) {
+  } else {
     return <Navigate to="/login" />;
   }
 };

@@ -1,7 +1,7 @@
 const AdminDashboardPage = () => {
   return (
-    <div>
-      <h1 className="bg-yellow-400 p-40">Admin Dashboard</h1>
+    <div className=" bg-yellow-400">
+      <h1 className=" p-40">Admin Dashboard</h1>
     </div>
   );
 };

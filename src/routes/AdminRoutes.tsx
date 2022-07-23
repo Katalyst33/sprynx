@@ -20,6 +20,8 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import { SearchIcon } from "@heroicons/react/solid";
+import XAllPackagesPage from "../pages/admin/XAllPackagesPage";
+import { Link } from "react-router-dom";
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
   { name: "Team", href: "#", icon: UsersIcon, current: false },
@@ -36,14 +38,33 @@ const userNavigation = [
 const AdminRoutes = () => {
   return (
     <>
-      <h1>manager Routes</h1>
-      <Routes>
-        {/* element={<dashboard />} */}
-        <Route path="/" element={<AdminLayouts />}>
-          <Route path="/dashboard" element={<AdminDashboardPage />} />
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      {/* sidebar */}
+
+      <div className="flex h-screen">
+        <aside className="hidden lg:block w-72 bg-violet-700">
+          <h1>Sidebar here</h1>
+          <h1>manager Routes</h1>
+          <Link
+            to="/manager/all-packages"
+            className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+          >
+            All Packages
+          </Link>
+        </aside>
+
+        <main className="w-full h-fill">
+          <div className="container mx-auto px-2 md:px-0">
+            <Routes>
+              {/* element={<dashboard />} */}
+              <Route path="/" element={<AdminLayouts />}>
+                <Route path="/dashboard" element={<AdminDashboardPage />} />
+                <Route path="/all-packages" element={<XAllPackagesPage />} />
+              </Route>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </div>
+        </main>
+      </div>
     </>
   );
 };

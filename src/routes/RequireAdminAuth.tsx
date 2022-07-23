@@ -13,9 +13,7 @@ export const RequireAdminAuth = ({ children }: any) => {
 
   if (isLoggedIn && LoggedInUser.role.includes("admin")) {
     return children;
-  }
-
-  if (!isLoggedIn) {
+  } else {
     return <Navigate to="/login" />;
   }
 };
