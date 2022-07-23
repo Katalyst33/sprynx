@@ -20,9 +20,7 @@ function HeaderLayout() {
         <div>
           <img className="w-28" src={companyLogo} />
         </div>
-        <div>
-          <ReduxComponent />
-        </div>
+
         <div>
           {toggle === false ? (
             <GiHamburgerMenu

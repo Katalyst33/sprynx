@@ -31,7 +31,7 @@ function App() {
           <Route path="/*" element={<GuestRoutes />} />
 
           <Route
-            path="/profile"
+            path="/account/*"
             element={
               <RequireAuth>
                 <ProtectedRoutes />
