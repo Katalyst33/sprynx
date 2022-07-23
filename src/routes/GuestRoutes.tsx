@@ -9,7 +9,7 @@ import Footer from "../layouts/Footer";
 import BookingPage from "../pages/BookingPage";
 import ContactPage from "../pages/ContactPage";
 import OurServicesPage from "../pages/OurServicesPage";
-import CreatePackagePage from "../pages/CreatePackagePage";
+import CreatePackagePage from "../pages/admin/CreatePackagePage";
 
 import React from "react";
 import AboutUsPage from "../pages/AboutUsPage";

@@ -1,6 +1,7 @@
 {
   "packages": [
     {
+      "id": "1",
       "title": "Golden",
       "description": "Popular package",
       "regularCar": "N43,830",
@@ -24,6 +25,7 @@
       "link": "golden-package"
     },
     {
+      "id": "2",
       "title": "Silver",
       "description": "Popular package",
       "regularCar": "N43,830",
@@ -47,6 +49,7 @@
       "link": "golden-package"
     },
     {
+      "id": "3",
       "title": "Diamond",
       "description": "Popular package",
       "regularCar": "N43,830",
@@ -70,28 +73,8 @@
       "link": "golden-package"
     },
     {
-      "id": "7",
-      "title": "Vibranium Ultra",
-      "description": "Best package",
-      "regularCar": "N200,830",
-      "duration": "24 hours",
-      "largeCar": "N250,830",
-      "logistics": "50,500 extra Logistics fee to Mainland.",
-      "services": [
-        {
-          "title": "Exterior",
-          "description": "Exterior cleaning"
-        },
-        {
-          "title": "Interior",
-          "description": "Interior cleaning"
-        }
-      ],
-      "link": "golden-package"
-    },
-    {
       "0": {
-        "id": "",
+        "id": 195,
         "title": "",
         "description": "",
         "regularCar": "",
@@ -109,33 +92,41 @@
           }
         ]
       },
-      "title": "Thunder Wash",
-      "description": "Best in Town",
-      "regularCar": "N20,000",
-      "duration": "20 - 40 hours",
-      "largeCar": "N50,000",
-      "logistics": "N2,000",
-      "id": "dlb7gH9"
+      "title": "Quo est minima est ",
+      "description": "Et sint quibusdam m",
+      "regularCar": "Consequatur Velit n",
+      "duration": "Incidunt id vitae i",
+      "largeCar": "Aut commodi rerum ut",
+      "logistics": "Dolorum voluptatem e",
+      "id": "Xdk8Bs0"
     },
     {
-      "id": "4",
-      "title": "Vibranium Ultra",
-      "description": "Best package",
-      "regularCar": "N200,830",
-      "duration": "24 hours",
-      "largeCar": "N250,830",
-      "logistics": "50,500 extra Logistics fee to Mainland.",
-      "services": [
-        {
-          "title": "Exterior",
-          "description": "Exterior cleaning"
-        },
-        {
-          "title": "Interior",
-          "description": "Interior cleaning"
-        }
-      ],
-      "link": "golden-package"
+      "0": {
+        "id": 502,
+        "title": "",
+        "description": "",
+        "regularCar": "",
+        "duration": "",
+        "largeCar": "",
+        "logistics": "",
+        "services": [
+          {
+            "title": "",
+            "description": ""
+          },
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      },
+      "title": "Tempore ut aliqua ",
+      "description": "Voluptates odio aut ",
+      "regularCar": "Ex mollit distinctio",
+      "duration": "Quia perferendis mag",
+      "largeCar": "Voluptatem sequi tot",
+      "logistics": "Perspiciatis esse q",
+      "id": "42X9vtQ"
     }
   ]
 }

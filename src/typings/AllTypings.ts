@@ -4,6 +4,7 @@ export interface PackageServiceTypings {
 }
 
 export interface PackageInfoTypings {
+  id: string;
   title: string;
   description: string;
   services: PackageServiceTypings[];
@@ -12,7 +13,6 @@ export interface PackageInfoTypings {
   regularCar: string;
   largeCar: string;
   logistics: string;
-
 }
 
 export interface PackageCardTypings {

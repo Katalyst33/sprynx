@@ -21,35 +21,32 @@ import {
 } from "@heroicons/react/outline";
 import { SearchIcon } from "@heroicons/react/solid";
 import XAllPackagesPage from "../pages/admin/XAllPackagesPage";
+import CreatePackagePage from "../pages/admin/CreatePackagePage";
 import { Link } from "react-router-dom";
-const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
-];
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
+
 const AdminRoutes = () => {
   return (
     <>
       {/* sidebar */}
 
       <div className="flex h-screen">
-        <aside className="hidden lg:block w-72 bg-violet-700">
-          <h1>Sidebar here</h1>
-          <h1>manager Routes</h1>
-          <Link
-            to="/manager/all-packages"
-            className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
-          >
-            All Packages
-          </Link>
+        <aside className="hidden lg:block w-72 bg-violet-700 ">
+          <div className="flex flex-col">
+            <h1>Sidebar here</h1>
+            <h1>manager Routes</h1>
+            <Link
+              to="/manager/all-packages"
+              className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+            >
+              All Packages
+            </Link>
+            <Link
+              to="/manager/create-package"
+              className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+            >
+              Create Package
+            </Link>
+          </div>
         </aside>
 
         <main className="w-full h-fill">
@@ -59,6 +56,7 @@ const AdminRoutes = () => {
               <Route path="/" element={<AdminLayouts />}>
                 <Route path="/dashboard" element={<AdminDashboardPage />} />
                 <Route path="/all-packages" element={<XAllPackagesPage />} />
+                <Route path="/create-package" element={<CreatePackagePage />} />
               </Route>
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

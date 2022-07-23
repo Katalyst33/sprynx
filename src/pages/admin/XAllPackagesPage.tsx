@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { $axios } from "../../service/http";
 import { PackageInfoTypings } from "../../typings/AllTypings";
 
@@ -24,22 +25,24 @@ const XAllPackagesPage = () => {
       });
   }
 
+  function handleDelete(id: string) {
+    console.log(id);
+    // prompt user to confirm deletion
+    // if confirmed, delete the package
+  }
+  /*   $axios
+  .delete(`/packages/${id}`)
+  .then((response: any) => {
+    console.log(response);
+    // handle success
+  })
+  .catch((error) => {
+    // handle error
+    console.log("i did not delete anything", error);
+  }); */
   useEffect(() => {
     fetchAllPackages();
   }, []);
-
-  const people = [
-    {
-      name: "Lindsay Walton",
-      title: "Front-end Developer",
-      department: "Optimization",
-      email: "lindsay.walton@example.com",
-      role: "Member",
-      image:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    // More people...
-  ];
 
   return (
     <div className="">
@@ -48,19 +51,20 @@ const XAllPackagesPage = () => {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
-            <h1 className="text-xl font-semibold text-gray-900">Users</h1>
+            <h1 className="text-xl font-semibold text-gray-900">
+              All Packages ({allPackagesData.length})
+            </h1>
             <p className="mt-2 text-sm text-gray-700">
-              A list of all the users in your account including their name,
-              title, email and role.
+              A list of all Package ....
             </p>
           </div>
           <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-            <button
-              type="button"
+            <Link
+              to="/manager/create-package"
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto"
             >
               Create Package
-            </button>
+            </Link>
           </div>
         </div>
         <div className="mt-8 flex flex-col">
@@ -116,9 +120,6 @@ const XAllPackagesPage = () => {
                           <div className=" text-blue-700 text-md font-semibold">
                             {packageInfo.title}
                           </div>
-                          <div className="text-gray-500">
-                            {packageInfo.department}
-                          </div>
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           <div className="text-gray-900">
@@ -148,16 +149,21 @@ const XAllPackagesPage = () => {
                           </span>
                         </td>
 
-                        <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                          <a
-                            href="#"
-                            className="text-blue-600 hover:text-blue-900"
-                          >
-                            Edit
-                            <span className="sr-only">
-                              , {packageInfo.name}
-                            </span>
-                          </a>
+                        <td className=" px-4 whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                          <div className="flex gap-x-4">
+                            <a
+                              href="#"
+                              className="text-blue-600 hover:text-blue-900"
+                            >
+                              Edit
+                            </a>
+                            <button
+                              onClick={() => handleDelete(packageInfo.id)}
+                              className="text-red-600 hover:text-red-700"
+                            >
+                              <i className="fa-solid fa-trash-xmark"></i>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))}

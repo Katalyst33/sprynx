@@ -29,10 +29,6 @@ export const userSlice = createSlice({
     },
 
     // reducer to add payload to fruits array
-
-    addFruit: (state, action: PayloadAction<any>) => {
-      state.user.fruits.push(action.payload);
-    },
   },
 });
 
