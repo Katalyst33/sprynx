@@ -37,6 +37,8 @@ const ProtectedRoutes = () => {
         <button>LogOut</button>
       </div>
 
+      <div></div>
+
       <Routes>
         <Route path="/" element={<ProtectedLayouts />}>
           <Route path="/dashboard" element={<UserDashboardPage />} />
