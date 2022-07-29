@@ -100,7 +100,7 @@ function PackagesPage(props: any) {
           </div>
         )}
 
-        {allPackagesData.length && (
+        {/* {allPackagesData.length && (
           <div>
             <h1 className="my-10">Not Packages Yet ...</h1>
 
@@ -114,7 +114,7 @@ function PackagesPage(props: any) {
               </button>
             </Link>
           </div>
-        )}
+        )} */}
       </div>
     </>
   );

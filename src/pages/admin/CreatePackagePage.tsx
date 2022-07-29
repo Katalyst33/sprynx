@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import LoadingData from "../../components/LoadingData";
 import { $axios } from "../../service/http";
 import { PackageServiceTypings } from "../../typings/AllTypings";
+import {IoIosAddCircleOutline} from "react-icons/io"
 
 const CreatePackage = () => {
   const [allServiceData, setAllServicesData] = useState<
@@ -24,9 +25,10 @@ const CreatePackage = () => {
 
   function AddServices(service: any) {
     console.log(service);
+    setIsChecked((prev) => !prev)
     setFormData({
       ...formData,
-      services: [...formData.services, service],
+      services: [...formData.services],
     });
   }
 
@@ -68,59 +70,15 @@ const CreatePackage = () => {
     fetchAllServices();
   }, []);
 
+  const [isChecked, setIsChecked] = React.useState(false)
+
   return (
-    <div className="">
+    <div className="text-center mb-10">
       <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-3xl lg:text-4xl mb-10">
         Create a package
       </h1>
-
-      {JSON.stringify(formData)}
-
       <section className="flex justify-center">
         <main>
-          <section>
-            <div>
-              {isPending ? (
-                <div>
-                  <LoadingData />
-                </div>
-              ) : (
-                <div className="">
-                  <div className="">
-                    <div className="flex justify-end ">
-                      <Link
-                        to="/manager/create-service"
-                        className="bg-blue-500"
-                      >
-                        Create Service
-                      </Link>
-                    </div>
-
-                    <div>
-                      {allServiceData.map((service, index) => {
-                        return (
-                          <div
-                            key={index}
-                            className="flex justify-between bg-gray-200 my-2"
-                          >
-                            <div>
-                              <div>{service.title}</div>
-                              <div>{service.description}</div>
-                            </div>
-                            <div className="flex gap-x-4">
-                              <button onClick={() => AddServices(service)}>
-                                Add
-                              </button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </section>
           <form>
             <main className="w-96 flex flex-col gap-4">
               <div>
@@ -224,8 +182,48 @@ const CreatePackage = () => {
               </div>
             </main>
 
+            <section className="">
+            <div className="mt-10">
+              {isPending ? (
+                <div>
+                  <LoadingData />
+                </div>
+              ) : (
+                <div className="">
+                  <div className="">
+
+                    <div>
+                      {allServiceData.map((service, index) => {
+                        return (
+                          <div
+                            key={index}
+                            className="flex justify-between text-left bg-gray-200 rounded-md my-2 px-4 py-2"
+                          >
+                            <div className="flex gap-3 items-center">
+                              <input type="checkbox" checked={isChecked}/>
+                              <div>
+                                <div className="font-medium">{service.title}</div>
+                                <div className="text-gray-700">{service.description}</div>
+                              </div>
+                            </div>
+                            <div className="flex gap-x-4">
+                              <button onClick={() => AddServices(service)}>
+                                <IoIosAddCircleOutline className="text-2xl" />
+                              </button>
+                            </div>
+                            
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+
             <button
-              className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
+              className="pointer transition mb-10 ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
               onClick={addNewPackage}
             >
               Create Package

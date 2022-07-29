@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { $axios } from "../../service/http";
 import { PackageInfoTypings } from "../../typings/AllTypings";
 
+
 const XAllPackagesPage = () => {
   const [allPackagesData, setAllPackagesData] = useState<PackageInfoTypings[]>(
     []
@@ -48,16 +49,14 @@ const XAllPackagesPage = () => {
   }, []);
 
   return (
-    <div>
-      <div className="px-4 sm:px-6 lg:px-8">
+    <div className="">
+      <div className="px-6 lg:px-10">
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
             <h1 className="text-xl font-semibold text-gray-900">
               All Packages ({allPackagesData.length})
             </h1>
-            <p className="mt-2 text-sm text-gray-700">
-              A list of all Package ....
-            </p>
+            <p className="mt-2 text-sm text-gray-700">A list of all the Packages </p>
           </div>
           <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
             <Link
@@ -118,7 +117,7 @@ const XAllPackagesPage = () => {
                     {allPackagesData.map((packageInfo, index) => (
                       <tr key={index}>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          <div className=" text-blue-700 text-md font-semibold">
+                          <div className="text-blue-700 text-md font-semibold">
                             {packageInfo.title}
                           </div>
                         </td>
@@ -126,15 +125,12 @@ const XAllPackagesPage = () => {
                           <div className="text-gray-900">
                             {packageInfo.description}
                           </div>
-                          <div className="text-gray-500">
-                            {packageInfo.description}
-                          </div>
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           <div className="text-gray-900">
-                            Regular:{packageInfo.regularCar}
+                            Regular: {packageInfo.regularCar}
                             <br></br>
-                            Large:{packageInfo.largeCar}
+                            Large: {packageInfo.largeCar}
                           </div>
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">

@@ -8,7 +8,7 @@ import {BsFacebook} from "react-icons/bs"
 
 const ContactPage = () => {
     return (
-      <div className="mt-60">
+      <div className="mt-60 text-center">
         <div>
           <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl lg:text-6xl">Get in touch</h1>
           <p className="mt-2 w-10/12 mx-auto">Visit us Today, contact or leave us a message on our socials</p>

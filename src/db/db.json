@@ -102,6 +102,37 @@
           "description": "Exterior cleaning"
         }
       ]
+    },
+    {
+      "id": 240,
+      "title": "Roman",
+      "description": "Cheapest Package",
+      "regularCar": "N12,500",
+      "duration": "2 Hours",
+      "largeCar": "N14,600",
+      "logistics": "N1,500",
+      "services": []
+    },
+    {
+      "id": 615,
+      "title": "German Juice",
+      "description": "Best in Town",
+      "regularCar": "N20,000",
+      "duration": "5 - 7 Hours",
+      "largeCar": "N25,500",
+      "logistics": "N4,600",
+      "services": [
+        {
+          "id": 236,
+          "title": "Interior",
+          "description": "Interior cleaning"
+        },
+        {
+          "id": 661,
+          "title": "Full cleaning",
+          "description": "we will clean up and dwon for you"
+        }
+      ]
     }
   ],
   "services": [

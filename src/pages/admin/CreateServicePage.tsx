@@ -65,7 +65,7 @@ const CreateServicePage = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="text-center">
       <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-3xl lg:text-4xl mb-10">
         Create a Service
       </h1>
@@ -117,18 +117,20 @@ const CreateServicePage = () => {
             </div>
           </main>
 
-          <button
-            className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
-            onClick={addNewService}
-          >
-            Create Service
-          </button>
-          <button
-            className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
-            onClick={updateService}
-          >
-            Update Service
-          </button>
+          <div className="flex gap-3 mx-auto w-5/6 mt-4">
+            <button
+              className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
+              onClick={addNewService}
+            >
+              Create Service
+            </button>
+            <button
+              className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
+              onClick={updateService}
+            >
+              Update Service
+            </button>
+          </div>
         </form>
       </section>
     </div>

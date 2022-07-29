@@ -1,6 +1,5 @@
 import logo from "./logo.svg";
 import "./css/App.css";
-import FloatingNav from "./layouts/FloatingNav";
 import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
 import BookingPage from "./pages/BookingPage";
