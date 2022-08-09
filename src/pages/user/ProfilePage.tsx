@@ -1,7 +1,7 @@
 const Dashboard = () => {
   return (
-    <div>
-      <h1 className="bg-violet-500 p-40">Profile Page</h1>
+    <div className="bg-gray-200 pt-32 px-20 h-screen">
+      <h1 className="text-2xl font-semibold">Profile Page</h1>
     </div>
   );
 };

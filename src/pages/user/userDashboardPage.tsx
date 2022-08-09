@@ -1,7 +1,8 @@
 const UserDashboardPage = () => {
   return (
-    <div>
-      <h1 className="bg-green-400 p-40">User Dashboard</h1>
+    <div className="bg-gray-200 pt-32 px-20 h-screen">
+      <h1 className="text-2xl font-semibold">User Dashboard</h1>
+      <div className=""></div>
     </div>
   );
 };

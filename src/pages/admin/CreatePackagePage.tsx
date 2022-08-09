@@ -12,7 +12,7 @@ const CreatePackage = () => {
   >([]);
   const [isPending, setIsPending] = useState(true);
 
-  var [formData, setFormData] = React.useState({
+  const [formData, setFormData] = React.useState({
     id: Math.floor(Math.random() * 1000),
     title: "",
     description: "",
@@ -23,13 +23,16 @@ const CreatePackage = () => {
     services: [],
   });
 
-  function AddServices(service: any) {
+  const [theArray, setTheArray] = useState(formData.services);
+
+  function AddServices(service: any, e:any) {
     console.log(service);
-    setIsChecked((prev) => !prev)
-    setFormData({
-      ...formData,
-      services: [...formData.services],
-    });
+    e.preventDefault()
+    
+    // setFormData({
+    //   ...formData,
+    //   services: [...formData.service],
+    // });
   }
 
   function handleChange(event: any) {
@@ -191,7 +194,7 @@ const CreatePackage = () => {
               ) : (
                 <div className="">
                   <div className="">
-
+                    {JSON.stringify(formData)}
                     <div>
                       {allServiceData.map((service, index) => {
                         return (
@@ -200,14 +203,16 @@ const CreatePackage = () => {
                             className="flex justify-between text-left bg-gray-200 rounded-md my-2 px-4 py-2"
                           >
                             <div className="flex gap-3 items-center">
-                              <input type="checkbox" checked={isChecked}/>
+                              <input type="checkbox" 
+                              checked={isChecked} 
+                              onChange={(e) => AddServices(service, e)}/>
                               <div>
                                 <div className="font-medium">{service.title}</div>
                                 <div className="text-gray-700">{service.description}</div>
                               </div>
                             </div>
                             <div className="flex gap-x-4">
-                              <button onClick={() => AddServices(service)}>
+                              <button onClick={(e) => AddServices(service, e)}>
                                 <IoIosAddCircleOutline className="text-2xl" />
                               </button>
                             </div>
