@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = `http://localhost:5100` as string;
+const url = `http://localhost:3000` as string;
 axios.defaults.baseURL = url;
 
 axios.interceptors.response.use(
