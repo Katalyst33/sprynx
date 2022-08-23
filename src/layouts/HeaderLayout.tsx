@@ -5,8 +5,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import NavMobile from "./NavMobile";
 import ReduxComponent from "../components/ReduxComponent";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 function HeaderLayout() {
+  const currentUser = useSelector((state: RootState) => state.user.user);
+
   var [toggle, setToggle] = React.useState(false);
   function handleClick() {
     return setToggle(!toggle);
@@ -14,6 +18,12 @@ function HeaderLayout() {
   function closeMenu() {
     setToggle(false);
   }
+
+  function logout() {
+    localStorage.removeItem("id-card");
+    window.location.reload();
+  }
+
   return (
     <div className="mb-20 z-50">
       <div className="flex justify-between items-center px-10 fixed top-0 bg-white shadow-sm w-full">
@@ -64,6 +74,23 @@ function HeaderLayout() {
             >
               Contact Us
             </NavLink>
+
+            <NavLink to="/account">Account</NavLink>
+
+            {currentUser ? (
+              <div>
+                <button onClick={logout} className="bg-red-500 rounded-md">
+                  Logout <div>{JSON.stringify(currentUser?.email)}</div>
+                </button>
+              </div>
+            ) : (
+              <NavLink
+                to="/login"
+                className=" font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              >
+                Login
+              </NavLink>
+            )}
           </ul>
           {toggle && <NavMobile isOpen={true} closeMenu={closeMenu} />}
         </div>

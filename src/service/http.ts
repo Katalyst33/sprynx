@@ -1,6 +1,14 @@
 import axios from "axios";
-const url = `http://localhost:3000` as string;
+const url = `http://localhost:5300/api` as string;
 axios.defaults.baseURL = url;
+
+// get token from local storage
+const isAuth = localStorage.getItem("id-card") as string;
+
+// add token to request header
+if (isAuth) {
+  axios.defaults.headers.common["id-card"] = isAuth;
+}
 
 axios.interceptors.response.use(
   (response) => {

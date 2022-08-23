@@ -10,43 +10,76 @@ import GuestRoutes from "./routes/GuestRoutes";
 import AdminRoutes from "./routes/AdminRoutes";
 import { RequireAuth } from "./routes/RequireAuth";
 import { RequireAdminAuth } from "./routes/RequireAdminAuth";
+import { $axios } from "./service/http";
+import { useEffect, useState } from "react";
+import LoadingData from "./components/LoadingData";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "./redux/user";
 
 function App() {
-  function loadapp() {
-    // Run on APPload
+  // const [user, setUser] = useState(null);
+
+  const dispatch = useDispatch();
+
+  const [isPending, setIsPending] = useState(true);
+
+  function loadApp() {
+    $axios
+      .get("/ping")
+      .then((res: any) => {
+        console.log(res, "ping success");
+        dispatch(setCurrentUser(res.user));
+
+        setIsPending(false);
+      })
+      .catch((err) => {
+        console.log(err, "ping error");
+        setIsPending(false);
+      });
   }
 
   // const loggedInUser = localStorage.getItem("currentUser");
-  const loggedInUser = {
+  /*   const loggedInUser = {
     id: 1,
     email: "obee@gmail.com",
     role: "user",
   };
+ */
+
+  useEffect(() => {
+    loadApp();
+  }, []);
 
   return (
     <>
       <div>
-        <Routes>
-          {/* <Route path="/*" element={<ProtectedRoutes />} /> */}
-          <Route path="/*" element={<GuestRoutes />} />
+        {!isPending ? (
+          <Routes>
+            {/* <Route path="/*" element={<ProtectedRoutes />} /> */}
+            <Route path="/*" element={<GuestRoutes />} />
 
-          <Route
-            path="/account/*"
-            element={
-              <RequireAuth>
-                <ProtectedRoutes />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/manager/*"
-            element={
-              <RequireAdminAuth>
-                <AdminRoutes />
-              </RequireAdminAuth>
-            }
-          />
-        </Routes>
+            <Route
+              path="/account/*"
+              element={
+                <RequireAuth>
+                  <ProtectedRoutes />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/manager/*"
+              element={
+                <RequireAdminAuth>
+                  <AdminRoutes />
+                </RequireAdminAuth>
+              }
+            />
+          </Routes>
+        ) : (
+          <div>
+            <LoadingData />
+          </div>
+        )}
       </div>
     </>
   );
