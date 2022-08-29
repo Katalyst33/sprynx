@@ -20,7 +20,7 @@ const OurServicesPage = () => {
 
   return (
     <div className="text-center">
-      <div className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl my-52">
+      <div className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl mt-52">
         Our Services
       </div>
       <div>

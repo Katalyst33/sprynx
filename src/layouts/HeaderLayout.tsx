@@ -25,8 +25,8 @@ function HeaderLayout() {
   }
 
   return (
-    <div className="mb-20 z-50">
-      <div className="flex justify-between items-center px-10 fixed top-0 bg-white shadow-sm w-full">
+    <div className="z-50">
+      <div className="flex justify-between items-center px-10 sticky top-0 bg-white shadow-sm w-full">
         <div>
           <img className="w-28" src={companyLogo} />
         </div>

@@ -16,7 +16,7 @@ const AboutUsPage = () => {
 
   getEnv();
   return (
-    <div className="my-52 -z-30 text-center">
+    <div className="mt-52 -z-30 text-center">
       <div className="w-5/6 mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
           About {appName}

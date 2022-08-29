@@ -13,6 +13,7 @@ import CreatePackagePage from "../pages/admin/CreatePackagePage";
 
 import React from "react";
 import AboutUsPage from "../pages/AboutUsPage";
+import { HomePage } from "../pages/HomePage";
 
 const GuestRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const GuestRoutes = () => {
       <HeaderLayout />
       <Routes>
         <Route path="/" element={<GuestLayouts />}>
+          <Route index element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/all-packages" element={<PackagesPage />} />

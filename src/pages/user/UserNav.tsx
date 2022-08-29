@@ -8,28 +8,28 @@ const UserNav = (props:any) => {
             <Link
               onClick={()=> props.isOpen && props.closeMenu()}
               to="/account/dashboard"
-              className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Dashboard
             </Link>
             <Link
               to="/account/profile"
               onClick={()=> props.isOpen && props.closeMenu()}
-              className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               My Profile
             </Link>
             <Link
               to=""
               onClick={()=> props.isOpen && props.closeMenu()}
-              className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Payments History
             </Link>
             <Link
               to=""
               onClick={()=> props.isOpen && props.closeMenu()}
-              className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Log Out
             </Link>
