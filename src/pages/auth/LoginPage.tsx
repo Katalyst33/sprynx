@@ -23,12 +23,15 @@ const LoginPage = () => {
 
   // login user
   function loginUser(e: any) {
+    e.preventDefault();
+
     $axios
       .post("/login", formData)
       .then((response: any) => {
         // save to local storage
         localStorage.setItem("id-card", response.token);
 
+        // navigate to dashboard
         navigate("/account", { replace: true });
 
         setIsPending(false);
