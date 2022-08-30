@@ -72,7 +72,7 @@ const ProtectedRoutes = () => {
         </Route>
       </Routes>
 
-      <div className="bg-gray-600 p-10">Footer</div>
+      {/* <div className="bg-gray-600 p-10">Footer</div> */}
       {/* <Footer /> */}
     </>
   );

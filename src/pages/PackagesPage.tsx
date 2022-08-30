@@ -29,7 +29,7 @@ function PackagesPage(props: any) {
 
   function fetchAllPackages() {
     $axios
-      .get("/packages")
+      .post("/all-packages")
       .then((response: any) => {
         console.log(response);
         setAllPackagesData(response);

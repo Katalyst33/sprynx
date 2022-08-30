@@ -27,7 +27,7 @@ export const HomePage = () => {
   return (
     <div>
       {/* 1st session */}
-      <div className='bg-[#ECF3F1] py-14 lg:py-1'>
+      <div className='bg-[#ECF3F1] py-14 lg:py-10'>
         <div className='text-center lg:text-left lg:flex items-center'>
           <div className='w-4/6 lg:px-28 mx-auto'>
             <h1 className='text-5xl font-black flex justify-items-center'>Delivering Car Services 

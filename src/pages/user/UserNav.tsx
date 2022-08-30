@@ -3,33 +3,33 @@ import { Link } from 'react-router-dom'
 
 const UserNav = (props:any) => {
   return (
-    <div className='lg:hidden w-4/6 fixed h-full bg-purple-800 z-30'>
+    <div className='lg:hidden w-4/6 fixed h-full bg-purple-400 z-30'>
         <div className="flex flex-col mt-32 gap-5 mx-auto w-3/5 text-center">
             <Link
               onClick={()=> props.isOpen && props.closeMenu()}
               to="/account/dashboard"
-              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 text-white hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Dashboard
             </Link>
             <Link
               to="/account/profile"
               onClick={()=> props.isOpen && props.closeMenu()}
-              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 text-white hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               My Profile
             </Link>
             <Link
               to=""
               onClick={()=> props.isOpen && props.closeMenu()}
-              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 text-white hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Payments History
             </Link>
             <Link
               to=""
               onClick={()=> props.isOpen && props.closeMenu()}
-              className="font-bold transition ease-in-out duration-400 hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+              className="font-bold transition ease-in-out duration-400 text-white hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Log Out
             </Link>

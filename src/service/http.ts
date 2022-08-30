@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = `http://localhost:5330/api` as string;
+const url = `http://localhost:5300/api` as string;
 axios.defaults.baseURL = url;
 
 // get token from local storage
