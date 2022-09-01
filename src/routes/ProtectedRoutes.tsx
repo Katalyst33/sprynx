@@ -13,6 +13,7 @@ import PackagesPage from "../pages/PackagesPage";
 import { Link } from "react-router-dom";
 import companyLogo from "../assets/sprynx-logo.png";
 import UserNav from "../pages/user/UserNav";
+import PaymentHistory from "../pages/user/PaymentHistory";
 
 const ProtectedRoutes = () => {
 
@@ -30,7 +31,7 @@ const ProtectedRoutes = () => {
     <>
       {/* <HeaderLayout /> */}
       {dropMenu && <UserNav closeMenu={closeMenu} isOpen={true}/>}
-      <div className="flex justify-between px-10 items-center shadow-md fixed w-full bg-white">
+      <div className="flex justify-between px-10 items-center shadow-md sticky w-full bg-white">
         <img src={companyLogo} className="w-28"/>
         <div className="lg:flex gap-8 items-center hidden">
           <div className="flex justify-between gap-10">
@@ -47,7 +48,7 @@ const ProtectedRoutes = () => {
               My Profile
             </Link>
             <Link
-              to=""
+              to="/account/payment-profile"
               className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Payments History
@@ -66,9 +67,10 @@ const ProtectedRoutes = () => {
       </div>
          
       <Routes>
-        <Route path="/" element={<ProtectedLayouts />}>
+        <Route path="/" element ={<ProtectedLayouts />}>
           <Route path="/dashboard" element={<UserDashboardPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/payment-profile" element={<PaymentHistory />} />
         </Route>
       </Routes>
 

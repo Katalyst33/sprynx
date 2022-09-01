@@ -11,11 +11,11 @@ const UserDashboardPage = () => {
   }
   
   return (
-    <div className="bg-gray-200 pt-32 lg:px-20 px-4">
+    <div className="bg-gray-200 py-16 lg:px-20 px-4">
       <h1 className="text-3xl font-bold">User Dashboard</h1>
       <div className="lg:flex gap-10 pb-10">
         <div className="mt-5 bg-white rounded-lg shadow-md lg:w-7/12">
-          <h3 className="px-7 py-6 font-bold text-lg text-blue-700">Your Car Details</h3>
+          <h3 className="px-7 py-6 font-bold text-lg text-blue-700">My Car Details</h3>
           <hr className="shadow-md"/>
           <div className="px-7 py-6">
             <div className="md:flex gap-20 md:mb-5">
@@ -46,6 +46,12 @@ const UserDashboardPage = () => {
               <div className="mb-5">
                 <h5 className="font-bold text-blue-700">Appointment Date/Time</h5>
                 <p>3pm | 12 Sept 2023</p>
+              </div>
+            </div>
+            <div className="md:flex gap-20 md:mb-5">
+              <div className="mb-5">
+                <h5 className="font-bold text-blue-700">Wash Location</h5>
+                <p>21 Mokoro Avenue, Ekiti</p>
               </div>
             </div>
             <div>

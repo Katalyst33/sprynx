@@ -20,7 +20,7 @@ const UserNav = (props:any) => {
               My Profile
             </Link>
             <Link
-              to=""
+              to="account/payment-profile"
               onClick={()=> props.isOpen && props.closeMenu()}
               className="font-bold transition ease-in-out duration-400 text-white hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
