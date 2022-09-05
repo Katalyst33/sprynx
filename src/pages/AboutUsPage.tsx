@@ -1,5 +1,5 @@
 import React from "react";
-import car from "../assets/car1.jpg";
+import car from "../assets/1sthome.jpg";
 import { FaBullseye } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";

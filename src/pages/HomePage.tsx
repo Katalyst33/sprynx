@@ -2,7 +2,7 @@ import React from 'react'
 import {FaAward} from "react-icons/fa"
 import pic2 from "../assets/2ndhome.jpg"
 import pic3 from "../assets/3rdhome.jpg"
-import pic1 from "../assets/1sthome.png"
+import pic1 from "../assets/main.png"
 import { Link } from 'react-router-dom'
 
 export const HomePage = () => {
@@ -27,9 +27,9 @@ export const HomePage = () => {
   return (
     <div>
       {/* 1st session */}
-      <div className='bg-[#ECF3F1] py-14 lg:py-10'>
-        <div className='text-center lg:text-left lg:flex items-center'>
-          <div className='w-4/6 lg:px-28 mx-auto'>
+      <div className='bg-[#ECF3F1] py-20'>
+        <div className='text-center lg:text-left lg:flex items-center w-9/12 mx-auto lg:gap-16'>
+          <div className='mx-auto w-5/6'>
             <h1 className='text-5xl font-black flex justify-items-center'>Delivering Car Services 
     Directly To your 
     Doorstep.</h1>
@@ -38,7 +38,7 @@ export const HomePage = () => {
     everything needed to clean and service your car</p>
             <Link to="/services"><button className='bg-blue-500 mt-10 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-md'>See Our Services</button></Link>
           </div>
-          <div><img src={pic1} className="lg:w-[1000px] -mb-7 hidden lg:flex"/></div>
+          <div><img src={pic1} className="lg:w-[1000px] hidden lg:flex"/></div>
         </div>
       </div>
       

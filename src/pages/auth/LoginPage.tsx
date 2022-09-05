@@ -32,7 +32,7 @@ const LoginPage = () => {
         localStorage.setItem("id-card", response.token);
 
         // navigate to dashboard
-        navigate("/account", { replace: true });
+        navigate("/account/dashboard", { replace: true });
 
         setIsPending(false);
         window.location.reload();

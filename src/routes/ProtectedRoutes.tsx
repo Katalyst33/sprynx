@@ -14,8 +14,11 @@ import { Link } from "react-router-dom";
 import companyLogo from "../assets/sprynx-logo.png";
 import UserNav from "../pages/user/UserNav";
 import PaymentHistory from "../pages/user/PaymentHistory";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const ProtectedRoutes = () => {
+  const currentUser = useSelector((state: RootState) => state.user.user)
 
   const[dropMenu, setDropMenu] = React.useState(false)
 
@@ -32,7 +35,7 @@ const ProtectedRoutes = () => {
       {/* <HeaderLayout /> */}
       {dropMenu && <UserNav closeMenu={closeMenu} isOpen={true}/>}
       <div className="flex justify-between px-10 items-center shadow-md sticky w-full bg-white">
-        <img src={companyLogo} className="w-28"/>
+        <Link to="/"><img src={companyLogo} className="w-28"/></Link>
         <div className="lg:flex gap-8 items-center hidden">
           <div className="flex justify-between gap-10">
             <Link
@@ -53,15 +56,21 @@ const ProtectedRoutes = () => {
             >
               Payments History
             </Link>
-            <Link
-              to=""
-              className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
-            >
-              Log Out
-            </Link>
+            
           </div>
           <div>|</div>
-          <div><span className="text-green-700 font-bold">Hi</span> Okon</div>
+          <div><span className="text-green-700 flex gap-2 font-bold">Hi
+          {currentUser  &&
+              <div className="text-black font-normal">
+                {JSON.stringify(currentUser?.email)}
+              </div>
+          }
+          </span></div>
+          <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-md"
+            >
+              Log Out
+            </button>
         </div>
         {dropMenu === false ? <i className="fa-solid fa-bars lg:hidden text-xl cursor-pointer" onClick={handleClick}></i> : <i className="fa-solid fa-xmark lg:hidden text-2xl cursor-pointer" onClick={closeMenu}></i>}
       </div>

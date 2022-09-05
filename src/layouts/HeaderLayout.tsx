@@ -43,7 +43,7 @@ function HeaderLayout() {
               className="text-xl lg:hidden cursor-pointer"
             />
           )}
-          <ul className="lg:flex gap-x-5 hidden">
+          <ul className="lg:flex gap-x-7 hidden items-center">
             <NavLink
               to="/"
               className="font-normal transition ease-in-out duration-400 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
@@ -75,12 +75,14 @@ function HeaderLayout() {
               Contact Us
             </NavLink>
 
-            <NavLink to="/account">Account</NavLink>
+            <div>|</div>
+
+            {currentUser? (<NavLink to="/account/dashboard">Account</NavLink>) : <NavLink to="/account/dashboard" className="hidden">Account</NavLink>}
 
             {currentUser ? (
               <div>
-                <button onClick={logout} className="bg-red-500 rounded-md">
-                  Logout <div>{JSON.stringify(currentUser?.email)}</div>
+                <button onClick={logout} className="bg-red-500 rounded-md w-20">
+                  Logout <div>{JSON.stringify(currentUser?.role)}</div>
                 </button>
               </div>
             ) : (

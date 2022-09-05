@@ -26,13 +26,13 @@ const UserNav = (props:any) => {
             >
               Payments History
             </Link>
-            <Link
-              to=""
+            <hr/>
+            <button
               onClick={()=> props.isOpen && props.closeMenu()}
               className="font-bold transition ease-in-out duration-400 text-white hover:bg-white hover:rounded-md w-48 mx-auto py-1 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
             >
               Log Out
-            </Link>
+            </button>
         </div>
         <div className='bg-black fixed top-0 right-0 h-full w-full -z-10 opacity-50' onClick={()=>props.closeMenu()}></div>
     </div>
