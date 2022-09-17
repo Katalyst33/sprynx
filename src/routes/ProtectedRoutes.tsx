@@ -5,7 +5,7 @@ import GuestLayouts from "../layouts/GuestLayouts";
 import ProtectedLayouts from "../layouts/ProtectedLayouts";
 import NotFoundPage from "../pages/NotFoundPage";
 
-import { Route, Routes, useLocation, Navigate } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate, useNavigate } from "react-router-dom";
 import LoginPage from "../pages/auth/LoginPage";
 import UserDashboardPage from "../pages/user/userDashboardPage";
 import ProfilePage from "../pages/user/ProfilePage";
@@ -19,8 +19,15 @@ import { RootState } from "../redux/store";
 
 const ProtectedRoutes = () => {
   const currentUser = useSelector((state: RootState) => state.user.user)
+  const navigate = useNavigate()
 
   const[dropMenu, setDropMenu] = React.useState(false)
+
+  function logout() {
+    localStorage.removeItem("id-card");
+    navigate("/");
+    window.location.reload();
+  }
 
   function handleClick(){
     setDropMenu(true)
@@ -62,11 +69,12 @@ const ProtectedRoutes = () => {
           <div><span className="text-green-700 flex gap-2 font-bold">Hi
           {currentUser  &&
               <div className="text-black font-normal">
-                {JSON.stringify(currentUser?.email)}
+                {(currentUser?.email)}
               </div>
           }
           </span></div>
           <button
+              onClick={logout}
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-md"
             >
               Log Out

@@ -77,18 +77,19 @@ function HeaderLayout() {
 
             <div>|</div>
 
-            {currentUser? (<NavLink to="/account/dashboard">Account</NavLink>) : <NavLink to="/account/dashboard" className="hidden">Account</NavLink>}
+            {currentUser? (<NavLink to="/account/dashboard"><div className="text-center"><h3 className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide">My Account</h3></div></NavLink>) : <NavLink to="/account/dashboard" className="hidden">Account</NavLink>}
 
             {currentUser ? (
               <div>
-                <button onClick={logout} className="bg-red-500 rounded-md w-20">
-                  Logout <div>{JSON.stringify(currentUser?.role)}</div>
+                <button onClick={logout} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-md">
+                  Logout 
+                  {/* <div>{JSON.stringify(currentUser?.role[1])}</div> */}
                 </button>
               </div>
             ) : (
               <NavLink
                 to="/login"
-                className=" font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-md"
               >
                 Login
               </NavLink>

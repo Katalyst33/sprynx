@@ -4,6 +4,7 @@ import carDetails from "../assets/carDetails.jpg";
 import deal2 from "../assets/deal2.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserEmail } from "../redux/user";
+import ServiceImg from "../assets/Serviceimg.jpg"
 
 const OurServicesPage = () => {
   const dispatch = useDispatch();
@@ -20,9 +21,17 @@ const OurServicesPage = () => {
 
   return (
     <div className="text-center">
-      <div className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl mt-52">
-        Our Services
-      </div>
+      <div className="lg:flex gap-20 mx-auto w-5/6 lg:py-24 py-16 lg:items-center lg:justify-center">
+          <div className=" lg:text-right lg:w-2/6">
+            <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
+              At your Service
+            </h1>
+            <p className="mt-2 text-lg">
+              Visit us Today, contact or leave us a message on our socials
+            </p>
+          </div>
+          <div className="flex justify-center mt-10"><img src={ServiceImg} className="h-72 shadow-lg rounded-3xl"/></div>
+        </div>
       <div>
         <p className="bg-blue-50 px-20 py-16">
           Here at Sprynx Multi, we get to asked a lot of questions. There is one
@@ -53,8 +62,7 @@ const OurServicesPage = () => {
           </h3>
           <p>
             Car wax smoothes the paint surface and will reduce the friction
-            between debris and your car, meaning that tiny debris is more likely
-            to slide off your car rather than damage it.
+            between debris and your car.
           </p>
         </div>
         <div className="w-[370px] mx-auto mb-12 p-4">
@@ -66,9 +74,7 @@ const OurServicesPage = () => {
           </h3>
           <p>
             Car polish is a product that helps to eliminate surface scratches,
-            swirls, oxidation, dirt, and other minor imperfections. Polish
-            should be used before wax, as it helps to restore auto paint that
-            has lost its shine due to oxidation.
+            swirls, oxidation, dirt, and other minor imperfections.
           </p>
         </div>
         <div className="w-[370px] mx-auto mb-12 p-4">
@@ -79,11 +85,10 @@ const OurServicesPage = () => {
             Headlight Restoration
           </h3>
           <p>
-            Headlight restoration or plastic headlight restoration is the act of
+            Headlight restoration is the act of
             refinishing aged headlight lenses that have become discolored or
-            dull due to oxidation primarily due to UV light and other
-            environmental factors such as road debris impact rain, and exposure
-            to caustic chemicals
+            dull due to UV light and other
+            environmental factors.
           </p>
         </div>
         <div className="w-[370px] mx-auto mb-12 p-4">
@@ -95,9 +100,7 @@ const OurServicesPage = () => {
           </h3>
           <p>
             A clean engine makes a used car look newer and better maintained.
-            Some shops that perform engine cleaning services claim a clean
-            engine even runs a little cooler because removing the gunk formed by
-            dirt, oil and grease allows engines to run cooler
+            Helps make the engine run a little cooler.
           </p>
         </div>
       </div>

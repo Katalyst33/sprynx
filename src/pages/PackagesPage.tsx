@@ -3,6 +3,7 @@ import Debug from "../components/DebugDataComponent";
 import PackageCardComponent from "../components/PackageCardComponent";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
+import PackageImg from "../assets/packageimg.jpg"
 
 import { useEffect, useState } from "react";
 import DebugDataComponent from "../components/DebugDataComponent";
@@ -53,8 +54,19 @@ function PackagesPage(props: any) {
 
   return (
     <>
-      <div className="container mx-auto mb-40">
+      <div className="container mx-auto mb-10">
         {/* {JSON.stringify(allPackagesData)} */}
+        <div className="lg:flex gap-20 mx-auto w-5/6 lg:py-24 py-16 lg:items-center lg:justify-center">
+          <div className=" lg:text-right text-center lg:w-5/12">
+            <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
+              Car Packages
+            </h1>
+            <p className="mt-2 text-lg">
+            Choose a package below and get it delivered at your doorstep
+            </p>
+          </div>
+          <div className="flex justify-center mt-10"><img src={PackageImg} className="h-72 shadow-lg rounded-3xl"/></div>
+        </div>
 
         {isPending && (
           <div>
@@ -66,10 +78,6 @@ function PackagesPage(props: any) {
 
         {allPackagesData && (
           <div>
-            <h1 className="text-center text-xl lg:text-3xl py-10 ">
-              Choose a package below and get it <br /> delivered at your door
-              step
-            </h1>
             {/* grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 w-5/6 mx-auto */}
             <section className="flex items-center">
               <button>
