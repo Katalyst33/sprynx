@@ -5,6 +5,13 @@ import deal2 from "../assets/deal2.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserEmail } from "../redux/user";
 import ServiceImg from "../assets/Serviceimg.jpg"
+import ServicesSubImg1 from "../assets/deal2.jpg"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const OurServicesPage = () => {
   const dispatch = useDispatch();
@@ -22,34 +29,15 @@ const OurServicesPage = () => {
   return (
     <div className="text-center">
       <div className="lg:flex gap-20 mx-auto w-5/6 lg:py-24 py-16 lg:items-center lg:justify-center">
-          <div className=" lg:text-right lg:w-2/6">
-            <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
-              At your Service
-            </h1>
-            <p className="mt-2 text-lg">
-              Visit us Today, contact or leave us a message on our socials
-            </p>
-          </div>
-          <div className="flex justify-center mt-10"><img src={ServiceImg} className="h-72 shadow-lg rounded-3xl"/></div>
+        <div className=" lg:text-right lg:w-2/6">
+          <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
+            At your Service
+          </h1>
+          <p className="mt-2 text-lg">
+            Visit us Today, contact or leave us a message on our socials
+          </p>
         </div>
-      <div>
-        <p className="bg-blue-50 px-20 py-16">
-          Here at Sprynx Multi, we get to asked a lot of questions. There is one
-          question that keeps popping up, however: “What is the difference
-          between car detailing and car washing?” We realize that for most
-          non-car enthusiasts, the difference probably isn’t very significant.
-          However, all car owners, enthusiasts or not, should look at getting
-          their car fully detailed every so often, and should also perform
-          smaller details regularly to have their car looking at its best all
-          the time. So, to help our customers understand the many benefits of
-          car detailing, also known as auto-detailing, we are going to outline
-          what you can expect when you choose to have your car detailed. Trust
-          us when we say that you’ll never go back to normal washing! Simply
-          put, getting your car detailed means a top-to-bottom thorough cleaning
-          of your vehicle using specialized tools and products. Normally, a
-          detailer will also perform some light cosmetic touch-ups, but the
-          process does not include paintwork or body repairs
-        </p>
+        <div className="flex justify-center mt-10"><img src={ServiceImg} className="h-72 shadow-lg rounded-3xl"/></div>
       </div>
 
       <div className="lg:flex gap-5 w-5/6 mx-auto my-20">
@@ -105,33 +93,113 @@ const OurServicesPage = () => {
         </div>
       </div>
 
-      {/* <div>
-            <div className='w-5/6 mx-auto my-20'>
-                <div className='lg:flex items-center text-white bg-gradient-to-r from-gray-500 to-blue-600 rounded-2xl'>
-                    <img className='lg:w-3/6 lg:rounded-l-xl object-cover lg:h-[510px]' src={carDetails}/>
-                    <div className='lg:px-16 px-10 py-10 text-white'>
-                        <h3 className='text-xl font-bold mb-3'>Car Detailing</h3>
-                        <p className=''>Car detailing involves cleaning and reconditioning the interior and exterior of the car. The aim of this is to restore the paintwork by eliminating scratches or swirl marks to make the car look almost brand new like it did when you first drove it out of the shop.
+      <div className="mb-20 lg:flex text-lg w-4/6 mx-auto lg:gap-20">
+        <div className="w-5/6">
+          <img src={ServicesSubImg1} className="rounded-lg shadow-lg mb-8"/>
+          <div className="text-left">
+            <h2 className="text-blue-500 font-bold text-lg lg:mt-0 mt-4">Car Detailing</h2>
+            <p>Car detailing involves cleaning and reconditioning the 
+              interior and exterior of the car. The aim of this is to 
+              restore the paintwork by eliminating scratches or swirl 
+              marks to make the car look almost brand new like it did 
+              when you first drove it out of the shop.
+            </p>
+          </div>
+        </div>
+        <div className="w-5/6">
+          <img src={ServicesSubImg1} className="rounded-lg shadow-lg mb-8"/>
+          <div className="text-left">
+            <h2 className="text-blue-500 font-bold text-lg lg:mt-0 mt-4">Car Wash vs Car Detailing</h2>
+            <p>A car wash can be done by hand or by machines (a drive thru car wash) that run 
+              bristles, soap, and water to clean your car’s exterior.A car wash tends to be a 
+              superficial cleanse while an auto detail is more thorough and restorative.
+            </p>
+          </div>
+        </div>
+      </div>
 
-    A simple car wash gets rid of dirt on the outside of your car, and if you clean the interior you might catch some of the grime with a vacuum, but car detailing takes this process much further. Every car we detail has every last imperfection buffed, polished, or vacuumed out, leaving it fit for display in any showroom. Since there are no set guidelines, you will see a great variety in terms of the services included in a complete detail. At Sprynx Multi, our complete detail package consists of an exterior detailing using clay treatment and high-end wax, an advanced interior cleaning with stain removal and leather treatment as well as dressing on all the plastics.</p>
-                    </div>
-                </div>
-            </div>
-            <div className='w-5/6 mx-auto my-20'>
-                <div className='lg:flex items-center text-white bg-gradient-to-r from-gray-500 to-blue-600 rounded-2xl'>
-                    <div className='lg:px-16 px-10 py-10 text-white'>
-                        <h3 className='text-xl font-bold mb-3'>What is the difference between a Car Wash and an Auto Detail?</h3>
-                        <p className=''>Now that you know what car detailing is, we are going to quickly outline the differences between a car wash and auto detailing, before going on to talk some more about why car detailing is a seriously good idea.
+      <div className="lg:flex text-lg w-4/6 mx-auto lg:gap-20">
+        <div className="w-5/6">
+          <img src={ServicesSubImg1} className="rounded-lg shadow-lg mb-8"/>
+          <div className="text-left">
+            <h2 className="text-blue-500 font-bold text-lg lg:mt-0 mt-4">Exterior Car Detailing</h2>
+            <p>We begin with an exhaustive exterior wash to remove as much dirt as possible. 
+            Next, using special brushes and wheel cleaning products, the detailer takes 
+            off all the dust and filth. The paintwork is washed and dried from top to bottom 
+            using washing mitts and soft microfiber towels as well as polished to eliminate 
+            any light scratches.Finally, the paint is waxed to give it an additional protective 
+            layer using high-quality carnauba based paste wax.
+            </p>
+          </div>
+        </div>
+        <div className="w-5/6">
+          <img src={ServicesSubImg1} className="rounded-lg shadow-lg mb-8"/>
+          <div className="text-left">
+            <h2 className="text-blue-500 font-bold text-lg lg:mt-0 mt-4">Interior Car Detailing</h2>
+            <p>All of the upholstery inside the car is thoroughly vacuumed and shampooed to remove 
+              stains and dirt. If the car has leatherwork, this is often conditioned and scrubbed 
+              to remove dirt that is deeply ingrained. Lastly, the interior glass is also cleaned 
+              and polished then wiped down with a degreaser before rinsing everything clean.
+            </p>
+          </div>
+        </div>
+      </div>
 
-Aside from cost, a typical car wash only covers a fraction of the cleaning that you can get from a detail, and so only achieves a fraction of the result.
-So what does a car wash include?
-Most car washes take between ten and twenty minutes to go from washing to drying. A car wash can be done by hand or by machines (a drive thru car wash) that run bristles, soap, and water to clean your car’s exterior.
-A car wash tends to be a superficial cleanse while an auto detail is more thorough and restorative.</p>
-                    </div>
-                    <img className='h-[400px] lg:w-3/6 lg:rounded-r-xl object-cover lg:h-[500px]' src={deal2}/>
-                </div>
-            </div>
-        </div> */}
+      <Swiper
+        className="bg-blue-50 py-40 text-black w-5/6 mx-auto rounded-lg mt-32 shadow-lg"
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        autoplay={{ delay: 10000 }}
+        pagination={{ clickable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+      >
+        <SwiperSlide className="px-14 w-3/6 mx-auto">
+          <p className="italic text-lg">
+          Here at Sprynx Multi, we get to asked a lot of questions. There is one
+          question that keeps popping up, however: “What is the difference
+          between car detailing and car washing?”. We realize that for most
+          non-car enthusiasts, the difference probably isn’t very significant.
+          </p>
+        </SwiperSlide>
+        <SwiperSlide className="px-14">
+          <p className="italic text-lg">
+          However, all car owners, enthusiasts or not, should look at getting
+          their car fully detailed every so often, and should also perform
+          smaller details regularly to have their car looking at its best all
+          the time.
+          </p>
+        </SwiperSlide>
+        <SwiperSlide className="px-14">
+          <p className="italic text-lg">
+          So, to help our customers understand the many benefits of
+          car detailing, also known as auto-detailing, we are going to outline
+          what you can expect when you choose to have your car detailed. Trust
+          us when we say that you’ll never go back to normal washing!
+          </p>
+        </SwiperSlide>
+        <SwiperSlide className="px-14">
+          <p className="italic text-lg">
+          Simply
+          put, getting your car detailed means a top-to-bottom thorough cleaning
+          of your vehicle using specialized tools and products. Normally, a
+          detailer will also perform some light cosmetic touch-ups, but the
+          process does not include paintwork or body repairs
+          </p>
+        </SwiperSlide>
+      </Swiper>
+
+
+      <div className="w-4/6 mx-auto my-32 text-lg">
+        <h3 className="font-bold text-blue-400 mb-2 mt-4 ">Washing Your Car Is Important</h3>
+        <p className="leading-relaxed">A car wash is a low money and time investment with a great return on 
+          investment. Washing your car is important for a couple of reasons. 
+          Your car will look better clean and it will have a better resell and 
+          trade-in value. You will feel better and can even look better driving 
+          a clean and well maintained vehicle. Keeping your car washed is a low 
+          cost way to protect value and maintain appearance.</p>
+      </div>
     </div>
   );
 };

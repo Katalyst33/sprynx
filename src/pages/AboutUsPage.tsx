@@ -88,9 +88,12 @@ const AboutUsPage = () => {
       </div>
 
       <div className="w-5/6 mx-auto my-32">
-        <h3 className="font-bold text-2xl text-blue-900 mb-10">
+        <h3 className="font-bold text-2xl text-blue-900 mb-4">
           Mandatory Requirements for Dealers
         </h3>
+        <h4 className="text-lg w-4/6 mx-auto italic mb-20">Sprynx Multi works so hard to train detailers
+            who have a special attention to detail and are trustworthy,
+            reliable, and skilled in their respective field.</h4>
         <div className="lg:flex gap-4 mb-10">
           <div className="w-[350px] mx-auto mb-12 p-8">
             <p className="flex justify-center mb-3 text-2xl text-blue-400">
@@ -121,13 +124,11 @@ const AboutUsPage = () => {
             </p>
           </div>
         </div>
-        <h4 className="text-lg w-4/6 mx-auto">Sprynx Multi works so hard to train detailers
-            who have a special attention to detail and are trustworthy,
-            reliable, and skilled in their respective field.</h4>
+        
       </div>
 
       <Swiper
-        className="bg-gradient-to-r from-gray-800 to-blue-700 py-40 text-white"
+        className="bg-blue-100 py-40 text-black w-5/6 mx-auto shadow-lg rounded-lg"
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}

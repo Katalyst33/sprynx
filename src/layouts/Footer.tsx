@@ -6,7 +6,7 @@ const Footer = () => {
     <section className="bg-blue-400 mt-14">
       <div className="text-center text-white pt-20 pb-8 flex flex-col flex-wrap w-5/6 mx-auto">
         <h1 className="text-black-900 text-3xl">Get In Touch</h1>
-        <h2 className="text-base mt-3">
+        <h2 className="mt-3">
           Contact Address - 7 Aremu Bukola Crescent Pero Close Ogombo Off
           Abraham Adesanya Estate Ajah, Lekki, Lagos.
         </h2>

@@ -56,7 +56,7 @@ function PackagesPage(props: any) {
     <>
       <div className="container mx-auto mb-10">
         {/* {JSON.stringify(allPackagesData)} */}
-        <div className="lg:flex gap-20 mx-auto w-5/6 lg:py-24 py-16 lg:items-center lg:justify-center">
+        <div className="lg:flex gap-20 mx-auto w-5/6 lg:pt-24 lg:pb-5  py-16 lg:items-center lg:justify-center">
           <div className=" lg:text-right text-center lg:w-5/12">
             <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
               Car Packages
