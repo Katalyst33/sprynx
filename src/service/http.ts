@@ -1,5 +1,6 @@
 import axios from "axios";
-const url = `http://localhost:5300/api` as string;
+const url = `${import.meta.env.VITE_API_URL}/api` as string;
+
 axios.defaults.baseURL = url;
 
 // get token from local storage
