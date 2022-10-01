@@ -16,7 +16,7 @@ const XAllServicesPage = () => {
       .post("/services/all-services")
       .then((response: any) => {
         console.log(response);
-        setAllServicesData(response);
+        setAllServicesData(response.allServices);
         setIsPending(false);
         // handle success
       })
