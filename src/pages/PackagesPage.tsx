@@ -3,7 +3,7 @@ import Debug from "../components/DebugDataComponent";
 import PackageCardComponent from "../components/PackageCardComponent";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
-import PackageImg from "../assets/packageimg.jpg"
+import PackageImg from "../assets/packageimg.jpg";
 
 import { useEffect, useState } from "react";
 import DebugDataComponent from "../components/DebugDataComponent";
@@ -11,6 +11,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { $axios } from "../service/http";
 
 import { PackageInfoTypings } from "../typings/AllTypings";
+import PageAnimate from "../components/PageAnimate";
 
 function PackagesPage(props: any) {
   const [allPackagesData, setAllPackagesData] = useState([]);
@@ -30,10 +31,9 @@ function PackagesPage(props: any) {
 
   function fetchAllPackages() {
     $axios
-      .post("/all-packages")
+      .post("packages/all-packages")
       .then((response: any) => {
-        console.log(response);
-        setAllPackagesData(response);
+        setAllPackagesData(response.allPackages);
         setIsPending(false);
         // handle success
       })
@@ -54,61 +54,64 @@ function PackagesPage(props: any) {
 
   return (
     <>
-      <div className="container mx-auto mb-10">
-        {/* {JSON.stringify(allPackagesData)} */}
-        <div className="lg:flex gap-20 mx-auto w-5/6 lg:pt-24 lg:pb-5  py-16 lg:items-center lg:justify-center">
-          <div className=" lg:text-right text-center lg:w-5/12">
-            <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
-              Car Packages
-            </h1>
-            <p className="mt-2 text-lg">
-            Choose a package below and get it delivered at your doorstep
-            </p>
-          </div>
-          <div className="flex justify-center mt-10"><img src={PackageImg} className="h-72 shadow-lg rounded-3xl"/></div>
-        </div>
-
-        {isPending && (
-          <div>
-            <div className="p-40">
-              <i className="fa-solid fa-spinner-third animate-spin  text-5xl mt-20 text-blue-500"></i>
+      <PageAnimate>
+        <div className="container mx-auto mb-10">
+          {/* {JSON.stringify(allPackagesData)} */}
+          <div className="lg:flex gap-20 mx-auto w-5/6 lg:pt-24 lg:pb-5  py-16 lg:items-center lg:justify-center">
+            <div className=" lg:text-right text-center lg:w-5/12">
+              <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl lg:text-5xl">
+                Car Packages
+              </h1>
+              <p className="mt-2 text-lg">
+                Choose a package below and get it delivered at your doorstep
+              </p>
+            </div>
+            <div className="flex justify-center mt-10">
+              <img src={PackageImg} className="h-72 shadow-lg rounded-3xl" />
             </div>
           </div>
-        )}
 
-        {allPackagesData && (
-          <div>
-            {/* grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 w-5/6 mx-auto */}
-            <section className="flex items-center">
-              <button>
-                <i
-                  onClick={sliderleft}
-                  className="fa-regular fa-angle-left text-5xl lg:block hidden text-blue-400 opacity-40  font-extrabold   cursor-pointer hover:opacity-100"
-                ></i>
-              </button>
-              <div
-                id="slider"
-                className="mx-5 flex gap-8 w-full h-full overflow-x-scroll scroll-smooth scrollbar-hide"
-              >
-                {allPackagesData.map((packageInfo, index) => (
-                  <PackageCardComponent
-                    key={index}
-                    packageInfo={packageInfo}
-                    deletePackageCard={deleteCard}
-                  />
-                ))}
+          {isPending && (
+            <div>
+              <div className="p-40">
+                <i className="fa-solid fa-spinner-third animate-spin  text-5xl mt-20 text-blue-500"></i>
               </div>
-              <button>
-                <i
-                  onClick={slideright}
-                  className="fa-regular fa-angle-right text-5xl lg:block hidden text-blue-400 opacity-40  font-extrabold   cursor-pointer hover:opacity-100"
-                ></i>
-              </button>
-            </section>
-          </div>
-        )}
+            </div>
+          )}
 
-        {/* {allPackagesData.length && (
+          {allPackagesData && (
+            <div>
+              {/* grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 w-5/6 mx-auto */}
+              <section className="flex items-center">
+                <button>
+                  <i
+                    onClick={sliderleft}
+                    className="fa-regular fa-angle-left text-5xl lg:block hidden text-blue-400 opacity-40  font-extrabold   cursor-pointer hover:opacity-100"
+                  ></i>
+                </button>
+                <div
+                  id="slider"
+                  className="mx-5 flex gap-8 w-full h-full overflow-x-scroll scroll-smooth scrollbar-hide"
+                >
+                  {allPackagesData.map((packageInfo, index) => (
+                    <PackageCardComponent
+                      key={index}
+                      packageInfo={packageInfo}
+                      deletePackageCard={deleteCard}
+                    />
+                  ))}
+                </div>
+                <button>
+                  <i
+                    onClick={slideright}
+                    className="fa-regular fa-angle-right text-5xl lg:block hidden text-blue-400 opacity-40  font-extrabold   cursor-pointer hover:opacity-100"
+                  ></i>
+                </button>
+              </section>
+            </div>
+          )}
+
+          {/* {allPackagesData.length && (
           <div>
             <h1 className="my-10">Not Packages Yet ...</h1>
 
@@ -123,7 +126,8 @@ function PackagesPage(props: any) {
             </Link>
           </div>
         )} */}
-      </div>
+        </div>
+      </PageAnimate>
     </>
   );
 }

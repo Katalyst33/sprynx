@@ -1,6 +1,12 @@
 import logo from "./logo.svg";
 import "./css/App.css";
-import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  useNavigate,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 
 import BookingPage from "./pages/BookingPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -15,8 +21,10 @@ import { useEffect, useState } from "react";
 import LoadingData from "./components/LoadingData";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./redux/user";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   // const [user, setUser] = useState(null);
 
   const dispatch = useDispatch();
@@ -27,7 +35,6 @@ function App() {
     $axios
       .get("/ping")
       .then((res: any) => {
-        console.log(res, "ping success");
         dispatch(setCurrentUser(res.user));
 
         setIsPending(false);

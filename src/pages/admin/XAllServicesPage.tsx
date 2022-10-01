@@ -13,7 +13,7 @@ const XAllServicesPage = () => {
 
   function fetchAllServices() {
     $axios
-      .get("http://localhost:3000/all-service")
+      .post("/services/all-services")
       .then((response: any) => {
         console.log(response);
         setAllServicesData(response);
