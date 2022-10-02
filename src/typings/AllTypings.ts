@@ -1,11 +1,11 @@
 export interface PackageServiceTypings {
-  id: string;
   title: string;
   description: string;
+  uuid: string;
 }
 
 export interface PackageInfoTypings {
-  id: string;
+  uuid: string;
   title: string;
   description: string;
   services: [];

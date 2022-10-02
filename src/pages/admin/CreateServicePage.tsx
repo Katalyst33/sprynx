@@ -15,12 +15,12 @@ const CreateServicePage = () => {
 
   // get unique service data
 
-  function fetchAllService() {
+  function fetchService() {
     if (serviceId) {
       $axios
-        .get(`/services/${serviceId}`)
+        .get(`/services/one-service/${serviceId}`)
         .then((response: any) => {
-          setFormData(response);
+          setFormData(response.service);
           // handle success
         })
         .catch((error) => {
@@ -39,7 +39,7 @@ const CreateServicePage = () => {
   function addNewService(e: any) {
     e.preventDefault();
     $axios
-      .post("/services", formData)
+      .post("/services/add-service", formData)
       .then(() => {
         console.log("a new servcie was created");
       })
@@ -51,7 +51,7 @@ const CreateServicePage = () => {
   function updateService(e: any) {
     e.preventDefault();
     $axios
-      .patch(`/services/${serviceId}`)
+      .patch(`/services/update-service/${serviceId}`)
       .then(() => {
         console.log("a new servcie was created");
       })
@@ -61,7 +61,7 @@ const CreateServicePage = () => {
   }
 
   useEffect(() => {
-    fetchAllService();
+    fetchService();
   }, []);
 
   return (
@@ -117,19 +117,22 @@ const CreateServicePage = () => {
             </div>
           </main>
 
-          <div className="flex gap-3 mx-auto w-5/6 mt-4">
-            <button
-              className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
-              onClick={addNewService}
-            >
-              Create Service
-            </button>
-            <button
-              className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
-              onClick={updateService}
-            >
-              Update Service
-            </button>
+          <div className="flex justify-end   mt-4">
+            {serviceId ? (
+              <button
+                className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
+                onClick={updateService}
+              >
+                Update Service
+              </button>
+            ) : (
+              <button
+                className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
+                onClick={addNewService}
+              >
+                Create Service
+              </button>
+            )}
           </div>
         </form>
       </section>

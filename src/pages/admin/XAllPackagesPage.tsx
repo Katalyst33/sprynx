@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { $axios } from "../../service/http";
 import { PackageInfoTypings } from "../../typings/AllTypings";
 
-
 const XAllPackagesPage = () => {
   const [allPackagesData, setAllPackagesData] = useState<PackageInfoTypings[]>(
     []
@@ -12,10 +11,9 @@ const XAllPackagesPage = () => {
 
   function fetchAllPackages() {
     $axios
-      .get("/packages")
+      .post("/packages/all-packages")
       .then((response: any) => {
-        console.log(response);
-        setAllPackagesData(response);
+        setAllPackagesData(response.allPackages);
         setIsPending(false);
         // handle success
       })
@@ -26,11 +24,12 @@ const XAllPackagesPage = () => {
       });
   }
 
-  function handleDelete(id: string) {
+  function handleDelete(uuid: string) {
+    console.log("i got deleted", uuid);
     // prompt user to confirm deletion
     if (window.confirm("Are you sure you want to delete this package?")) {
       $axios
-        .delete(`/packages/${id}`)
+        .delete(`/packages/delete-package/${uuid}`)
         .then((response: any) => {
           fetchAllPackages();
           // handle success
@@ -56,7 +55,9 @@ const XAllPackagesPage = () => {
             <h1 className="text-xl font-semibold text-gray-900">
               All Packages ({allPackagesData.length})
             </h1>
-            <p className="mt-2 text-sm text-gray-700">A list of all the Packages </p>
+            <p className="mt-2 text-sm text-gray-700">
+              A list of all the Packages{" "}
+            </p>
           </div>
           <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
             <Link
@@ -155,7 +156,7 @@ const XAllPackagesPage = () => {
                               Edit
                             </a>
                             <button
-                              onClick={() => handleDelete(packageInfo.id)}
+                              onClick={() => handleDelete(packageInfo.uuid)}
                               className="text-red-600 hover:text-red-700"
                             >
                               <i className="fa-solid fa-trash-xmark"></i>
