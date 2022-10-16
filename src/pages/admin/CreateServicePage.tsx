@@ -5,7 +5,6 @@ import { $axios } from "../../service/http";
 
 const CreateServicePage = () => {
   const [formData, setFormData] = React.useState({
-    id: Math.floor(Math.random() * 1000),
     title: "",
     description: "",
   });
@@ -16,11 +15,18 @@ const CreateServicePage = () => {
   // get unique service data
 
   function fetchService() {
+    console.log("fetchService")
     if (serviceId) {
       $axios
         .get(`/services/one-service/${serviceId}`)
         .then((response: any) => {
-          setFormData(response.service);
+          console.log(response)
+          setFormData({
+            title: response.service.title,
+            description: response.service.description
+          })
+          // setFormData(response);
+          
           // handle success
         })
         .catch((error) => {
@@ -29,7 +35,6 @@ const CreateServicePage = () => {
         });
     } else {
       setFormData({
-        id: Math.floor(Math.random() * 1000),
         title: "",
         description: "",
       });
@@ -41,7 +46,7 @@ const CreateServicePage = () => {
     $axios
       .post("/services/add-service", formData)
       .then(() => {
-        console.log("a new servcie was created");
+        console.log("a new service was created");
       })
       .catch((error) => {
         console.log("services was not created", error);
@@ -51,9 +56,9 @@ const CreateServicePage = () => {
   function updateService(e: any) {
     e.preventDefault();
     $axios
-      .patch(`/services/update-service/${serviceId}`)
+      .post(`/services/update-service/${serviceId}`, formData)
       .then(() => {
-        console.log("a new servcie was created");
+        console.log("a new service was created");
       })
       .catch((error) => {
         console.log("services was not created", error);
@@ -66,8 +71,9 @@ const CreateServicePage = () => {
 
   return (
     <div className="text-center">
+      
       <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-3xl lg:text-4xl mb-10">
-        Create a Service
+        {serviceId ? "Edit Service": "Create a Service"}
       </h1>
       <section className="flex justify-center">
         <form>
@@ -117,22 +123,23 @@ const CreateServicePage = () => {
             </div>
           </main>
 
-          <div className="flex justify-end   mt-4">
-            {serviceId ? (
+          <div className="flex justify-end mt-4">
+            {serviceId ?
               <button
                 className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
                 onClick={updateService}
               >
                 Update Service
-              </button>
-            ) : (
+              </button> :
               <button
+
                 className="pointer transition ease-in-out duration-400 hover:bg-blue-600 bg-blue-900 rounded-md px-5 py-2 text-white shadow-md mt-3"
                 onClick={addNewService}
               >
                 Create Service
-              </button>
-            )}
+              </button>}
+
+
           </div>
         </form>
       </section>

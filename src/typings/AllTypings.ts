@@ -1,7 +1,7 @@
 export interface PackageServiceTypings {
+  uuid: string;
   title: string;
   description: string;
-  uuid: string;
 }
 
 export interface PackageInfoTypings {

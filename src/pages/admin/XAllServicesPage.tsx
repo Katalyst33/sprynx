@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import LoadingData from "../../components/LoadingData";
 import { $axios } from "../../service/http";
 import { PackageServiceTypings } from "../../typings/AllTypings";
@@ -10,6 +10,8 @@ const XAllServicesPage = () => {
     PackageServiceTypings[]
   >([]);
   const [isPending, setIsPending] = useState(true);
+
+  const { serviceId } = useParams();
 
   function fetchAllServices() {
     $axios
@@ -27,24 +29,20 @@ const XAllServicesPage = () => {
       });
   }
 
-  function handleDelete(uuid: string) {
-    //confirm delete
-    if (window.confirm("Are you sure you want to delete this package?")) {
-      // prevent default
+  function deleteService(id: string){
+    $axios
+    .delete(`/services/delete-service/${id}`)
+    .then((response: any) =>{
+      console.log(response);
+      fetchAllServices();
+      setIsPending(false);
+    })
 
-      $axios
-        .delete(`/services/delete-service/${uuid}`)
-        .then((response: any) => {
-          fetchAllServices();
-          setIsPending(false);
-          // handle success
-        })
-        .catch((error) => {
-          setIsPending(false);
-          // handle error
-          console.log("i did not fetch anything", error);
-        });
-    }
+    .catch((error) => {
+      setIsPending(false);
+      // handle error
+      console.log("i did not delete anything", error);
+    });
   }
 
   useEffect(() => {
@@ -116,19 +114,14 @@ const XAllServicesPage = () => {
 
                           <td className=" px-4 whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                             <div className="flex gap-x-4">
-                              <Link
-                                className="text-blue-600 hover:text-blue-900"
-                                to={`/manager/edit-service/${service.uuid}`}
-                              >
-                                Edit
-                              </Link>
-
-                              <button
-                                onClick={(e) => {
-                                  handleDelete(service?.uuid);
-                                }}
-                                className="text-red-600 hover:text-red-700"
-                              >
+                            
+                                <Link
+                                  to={`/manager/edit-service/${service.uuid}`}
+                                >
+                                  Edit
+                                </Link>
+                            
+                              <button onClick={() => deleteService(service.uuid)} className="text-red-600 hover:text-red-700">
                                 <i className="fa-solid fa-trash-xmark"></i>
                               </button>
                             </div>

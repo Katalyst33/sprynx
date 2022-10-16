@@ -45,7 +45,7 @@ const CreatePackage = () => {
   function addNewPackage(e: any) {
     e.preventDefault();
     $axios
-      .post("/packages", formData)
+      .post("/add-package", formData)
       .then(() => {
         console.log("a new package was created");
       })
@@ -55,10 +55,10 @@ const CreatePackage = () => {
   }
   function fetchAllServices() {
     $axios
-      .get("/services")
+      .post("/services/all-services")
       .then((response: any) => {
         console.log(response);
-        setAllServicesData(response);
+        setAllServicesData(response.allServices);
         setIsPending(false);
         // handle success
       })
@@ -194,7 +194,7 @@ const CreatePackage = () => {
               ) : (
                 <div className="">
                   <div className="">
-                    {JSON.stringify(formData)}
+                    <div className="w-1/6">{JSON.stringify(formData)}</div>
                     <div>
                       {allServiceData.map((service, index) => {
                         return (

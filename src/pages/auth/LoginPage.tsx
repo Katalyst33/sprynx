@@ -14,6 +14,7 @@ const LoginPage = () => {
     email: "obee@gmail.com",
     password: "123456",
   });
+
   function handleChange(event: any) {
     var { name, value } = event.target;
     setFormData(function (prev) {

@@ -77,7 +77,7 @@ function HeaderLayout() {
 
             <div>|</div>
 
-            {currentUser? (<NavLink to="/account/dashboard"><div className="text-center"><h3 className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide">My Account</h3></div></NavLink>) : <NavLink to="/account/dashboard" className="hidden">Account</NavLink>}
+            {currentUser ? (<NavLink to="/account/dashboard"><div className="text-center"><h3 className="font-normal transition ease-in-out duration-500 hover:text-blue-800 transform hover:scale-105 text-lg hover:tracking-wide">My Account</h3></div></NavLink>) : <NavLink to="/account/dashboard" className="hidden">Account</NavLink>}
 
             {currentUser ? (
               <div>
