@@ -8,7 +8,7 @@ export interface PackageInfoTypings {
   uuid: string;
   title: string;
   description: string;
-  services: [];
+  services: string[];
   link: string;
   duration: string;
   regularCar: string;
