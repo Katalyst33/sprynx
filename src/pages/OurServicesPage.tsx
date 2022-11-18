@@ -4,7 +4,7 @@ import carDetails from "../assets/carDetails.jpg";
 import deal2 from "../assets/deal2.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserEmail } from "../redux/user";
-import ServiceImg from "../assets/Serviceimg.jpg";
+import ServiceImg from "../assets/serviceimg.jpg";
 import ServicesSubImg1 from "../assets/deal2.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
