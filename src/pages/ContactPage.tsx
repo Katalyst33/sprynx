@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
-import ContactImg from "../assets/contactImg.jpg";
+import ContactImg from "../assets/contactimg.jpg";
 import PageAnimate from "../components/PageAnimate";
 
 const ContactPage = () => {
