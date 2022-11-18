@@ -29,14 +29,12 @@ export default function PackageCardComponent(props: PackageCardTypings) {
         <p className="text-white">{packageInfo.description}</p>
 
         <div>
-          <ul>
-            {packageInfo.services.map(
-              (service: PackageServiceTypings, index: number) => (
-                <div key={index}>
-                  <ServiceDropDownComponent service={service} />
-                </div>
-              )
-            )}
+        <ul>
+            {packageInfo.services.map((service, index) => (
+              <div>
+                <ServiceDropDownComponent key={index} service={service} />
+              </div>
+            ))}
           </ul>
         </div>
 
